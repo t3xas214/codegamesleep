@@ -1,5 +1,37 @@
 // CodeGameSleep — Interactive Features
 document.addEventListener('DOMContentLoaded', () => {
+  // Mobile Menu Toggle
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const nav = document.getElementById('main-nav');
+  
+  if (mobileMenuToggle && nav) {
+    mobileMenuToggle.addEventListener('click', () => {
+      const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+      mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('open');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking on a link
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        mobileMenuToggle.focus();
+      }
+    });
+  }
+  
   // Theme Toggle
   const themeToggle = document.getElementById('theme-toggle');
   const html = document.documentElement;
@@ -110,27 +142,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Scroll reveal animation
-  const observerOptions = {
+  // Enhanced Scroll reveal animation with Intersection Observer
+  const revealObserverOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+        entry.target.classList.add('reveal');
+        // Add staggered delay for multiple items
+        const delayClass = `reveal-delay-${(index % 3) + 1}`;
+        entry.target.classList.add(delayClass);
+        revealObserver.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, revealObserverOptions);
 
-  // Observe all cards for scroll reveal
-  cards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(card);
+  // Observe sections and cards for scroll reveal
+  document.querySelectorAll('section, .card, .clip-card, .stat-card').forEach((el, index) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    revealObserver.observe(el);
   });
 
   // Typing effect for tagline (optional enhancement)
@@ -149,26 +183,131 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, 500);
   }
 
-  // Gaming Clip Submission Form
+  // Enhanced Form Validation
   const clipForm = document.getElementById('clipSubmitForm');
   const submitSuccess = document.getElementById('submitSuccess');
 
   if (clipForm) {
+    const formFields = {
+      clipperName: {
+        element: document.getElementById('clipperName'),
+        error: document.getElementById('clipperName-error'),
+        validate: (value) => {
+          if (!value.trim()) return 'Name is required';
+          if (value.trim().length < 2) return 'Name must be at least 2 characters';
+          if (value.length > 50) return 'Name must be less than 50 characters';
+          return '';
+        }
+      },
+      clipGame: {
+        element: document.getElementById('clipGame'),
+        error: document.getElementById('clipGame-error'),
+        validate: (value) => {
+          if (!value.trim()) return 'Game name is required';
+          if (value.trim().length < 2) return 'Game name must be at least 2 characters';
+          return '';
+        }
+      },
+      clipUrl: {
+        element: document.getElementById('clipUrl'),
+        error: document.getElementById('clipUrl-error'),
+        validate: (value) => {
+          if (!value.trim()) return 'URL is required';
+          try {
+            const url = new URL(value);
+            const validDomains = ['youtube.com', 'youtu.be', 'twitch.tv', 'tiktok.com', 'instagram.com', 'twitter.com', 'x.com'];
+            const hostname = url.hostname.replace('www.', '');
+            if (!validDomains.some(domain => hostname.includes(domain))) {
+              return 'Please enter a valid URL from YouTube, Twitch, TikTok, Instagram, or Twitter';
+            }
+          } catch {
+            return 'Please enter a valid URL';
+          }
+          return '';
+        }
+      },
+      clipDescription: {
+        element: document.getElementById('clipDescription'),
+        error: document.getElementById('clipDescription-error'),
+        validate: (value) => {
+          if (!value.trim()) return 'Description is required';
+          if (value.trim().length < 10) return 'Description must be at least 10 characters';
+          if (value.length > 500) return 'Description must be less than 500 characters';
+          return '';
+        }
+      }
+    };
+
+    // Real-time validation
+    Object.entries(formFields).forEach(([fieldName, field]) => {
+      if (field.element && field.error) {
+        // Validate on blur
+        field.element.addEventListener('blur', () => {
+          const error = field.validate(field.element.value);
+          field.error.textContent = error;
+          if (error) {
+            field.element.setAttribute('aria-invalid', 'true');
+          } else {
+            field.element.setAttribute('aria-invalid', 'false');
+          }
+        });
+
+        // Clear error on input
+        field.element.addEventListener('input', () => {
+          if (field.element.getAttribute('aria-invalid') === 'true') {
+            const error = field.validate(field.element.value);
+            field.error.textContent = error;
+            if (!error) {
+              field.element.setAttribute('aria-invalid', 'false');
+            }
+          }
+        });
+      }
+    });
+
+    // Form submission with validation
     clipForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
+      let isValid = true;
+      
+      // Validate all fields
+      Object.entries(formFields).forEach(([fieldName, field]) => {
+        if (field.element && field.error) {
+          const error = field.validate(field.element.value);
+          field.error.textContent = error;
+          if (error) {
+            field.element.setAttribute('aria-invalid', 'true');
+            isValid = false;
+            field.element.focus();
+          } else {
+            field.element.setAttribute('aria-invalid', 'false');
+          }
+        }
+      });
+
+      if (!isValid) {
+        // Focus first invalid field
+        const firstInvalid = Object.values(formFields).find(field => 
+          field.element && field.element.getAttribute('aria-invalid') === 'true'
+        );
+        if (firstInvalid) {
+          firstInvalid.element.focus();
+        }
+        return;
+      }
+      
       const formData = {
-        name: document.getElementById('clipperName').value,
-        game: document.getElementById('clipGame').value,
-        url: document.getElementById('clipUrl').value,
-        description: document.getElementById('clipDescription').value,
+        name: formFields.clipperName.element.value.trim(),
+        game: formFields.clipGame.element.value.trim(),
+        url: formFields.clipUrl.element.value.trim(),
+        description: formFields.clipDescription.element.value.trim(),
         tiktokConsent: document.getElementById('tiktokConsent').checked,
         creditConsent: document.getElementById('creditConsent').checked,
         timestamp: new Date().toISOString()
       };
 
       // In production, you'd send this to a backend API
-      // For now, we'll simulate the submission
       console.log('Clip Submission:', formData);
 
       // Show loading state
@@ -182,6 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hide form and show success message
         clipForm.style.display = 'none';
         submitSuccess.style.display = 'block';
+        submitSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
         // Optional: Store in localStorage for demo purposes
         const submissions = JSON.parse(localStorage.getItem('clipSubmissions') || '[]');
@@ -195,8 +335,33 @@ document.addEventListener('DOMContentLoaded', () => {
           submitSuccess.style.display = 'none';
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalBtnText;
+          
+          // Clear all error messages
+          Object.values(formFields).forEach(field => {
+            if (field.element) {
+              field.element.setAttribute('aria-invalid', 'false');
+            }
+            if (field.error) {
+              field.error.textContent = '';
+            }
+          });
         }, 5000);
       }, 1500);
     });
   }
+
+  // Keyboard navigation improvements (already handled in mobile menu section, but kept for consistency)
+
+  // Improved card keyboard navigation
+  document.querySelectorAll('.card, .clip-card').forEach(card => {
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const link = card.querySelector('a');
+        if (link) {
+          link.click();
+        }
+      }
+    });
+  });
 });

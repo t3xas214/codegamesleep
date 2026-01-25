@@ -1,418 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CodeGameSleep — The Loop Never Ends</title>
-  <meta name="description" content="CodeGameSleep — The Loop Never Ends. Gamer • Coder • Designer. Portfolio showcasing projects, gaming clips, and coding adventures." />
-  
+  <title>Last War: Alliance Hub</title>
+  <meta name="description"
+    content="Last War Survival Alliance Hub. Strategy, Resource Tracking, and Battle Reports for the DTSM Alliance." />
+
   <!-- SEO Meta Tags -->
-  <meta name="keywords" content="web developer, gamer, portfolio, coding, projects, gaming clips, CodeGameSleep" />
+  <meta name="keywords" content="Last War Survival, Alliance, Strategy, Guide, DTSM, Zombie Game" />
   <meta name="author" content="CodeGameSleep" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://codegamesleep.com" />
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://codegamesleep.com" />
-  <meta property="og:title" content="CodeGameSleep — The Loop Never Ends" />
-  <meta property="og:description" content="Portfolio showcasing projects, gaming clips, and coding adventures. Gamer • Coder • Designer." />
-  <meta property="og:image" content="https://codegamesleep.com/images/codegamesleep2logo.png" />
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://codegamesleep.com" />
-  <meta property="twitter:title" content="CodeGameSleep — The Loop Never Ends" />
-  <meta property="twitter:description" content="Portfolio showcasing projects, gaming clips, and coding adventures. Gamer • Coder • Designer." />
-  <meta property="twitter:image" content="https://codegamesleep.com/images/codegamesleep2logo.png" />
-  
-  <!-- PWA -->
-  <meta name="theme-color" content="#0b0b0d" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="apple-touch-icon" href="images/codegamesleep2logo.png" />
-  
+
   <!-- Preload critical resources -->
   <link rel="preload" href="style.css" as="style" />
   <link rel="preload" href="script.js" as="script" />
-  
+
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   <link rel="icon" type="image/png" href="images/codegamesleep2logo.png" />
-  
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "CodeGameSleep",
-    "url": "https://codegamesleep.com",
-    "description": "Gamer • Coder • Designer",
-    "sameAs": [
-      "https://github.com/codegamesleep",
-      "https://twitter.com/codegamesleep"
-    ]
-  }
-  </script>
 </head>
+
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  
+  <a href="#main-content" class="skip-link">Skip to Mission</a>
+
+  <!-- Game HUD Header -->
   <header class="site-header">
-    <a href="#home" class="brand" aria-label="CodeGameSleep Home">
-      <img src="images/codegamesleep2logo.png" alt="CodeGameSleep logo" class="logo" width="36" height="36" />
-      <span class="brand-text">CodeGameSleep</span>
-    </a>
-    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
-    <nav class="nav" id="main-nav" aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#gaming">Gaming</a>
-      <a href="#contact">Contact</a>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
-        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="12" cy="12" r="4.5" fill="currentColor" opacity="0.95"/>
-          <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.3"/>
-          <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5.64 5.64l1.41 1.41M16.95 16.95l1.41 1.41M5.64 18.36l1.41-1.41M16.95 7.05l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-          <circle cx="12" cy="4" r="0.75" fill="currentColor" opacity="0.6"/>
-          <circle cx="12" cy="20" r="0.75" fill="currentColor" opacity="0.6"/>
-          <circle cx="4" cy="12" r="0.75" fill="currentColor" opacity="0.6"/>
-          <circle cx="20" cy="12" r="0.75" fill="currentColor" opacity="0.6"/>
-        </svg>
-        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
-          <circle cx="16.5" cy="8" r="1.2" fill="currentColor" opacity="0.25"/>
-          <circle cx="15" cy="10.5" r="0.7" fill="currentColor" opacity="0.2"/>
-          <circle cx="18" cy="11.5" r="0.8" fill="currentColor" opacity="0.22"/>
-          <circle cx="17.5" cy="13.5" r="0.6" fill="currentColor" opacity="0.18"/>
-          <path d="M19 9.5c0.5 0.3 0.8 0.8 0.8 1.3" stroke="currentColor" stroke-width="0.8" opacity="0.15" stroke-linecap="round"/>
-        </svg>
-      </button>
-    </nav>
+    <div class="hud-top-row">
+      <!-- Commander Profile -->
+      <div class="commander-profile">
+        <div class="avatar-frame">
+          <img src="https://ui-avatars.com/api/?name=Cmdr&background=0D8ABC&color=fff&size=128"
+            alt="Commander Avatar" />
+        </div>
+        <div class="power-display">
+          <span class="power-label">Power</span>
+          <span class="power-value">12.5M</span>
+        </div>
+      </div>
+
+      <!-- Resources -->
+      <div class="resources-bar">
+        <div class="res-capsule res-food">
+          <div class="res-icon">🍞</div>
+          <span class="res-value">4.2M</span>
+          <span class="res-add">+</span>
+        </div>
+        <div class="res-capsule res-steel">
+          <div class="res-icon">⚙️</div>
+          <span class="res-value">1.8M</span>
+          <span class="res-add">+</span>
+        </div>
+        <div class="res-capsule res-gold">
+          <div class="res-icon">💰</div>
+          <span class="res-value">50K</span>
+          <span class="res-add">+</span>
+        </div>
+      </div>
+    </div>
   </header>
 
+  <!-- Bottom Navigation Dock -->
+  <nav class="bottom-nav">
+    <a href="#welcome" class="nav-item active">
+      <div class="nav-icon">ℹ️</div>
+      <span>Info</span>
+    </a>
+    <a href="#events" class="nav-item">
+      <div class="nav-icon">⚔️</div>
+      <span>VS Duel</span>
+    </a>
+    <a href="#mail" class="nav-item">
+      <div class="nav-icon">📩</div>
+      <span>Mail</span>
+    </a>
+    <a href="#base" class="nav-item">
+      <div class="nav-icon">🏠</div>
+      <span>Base</span>
+    </a>
+  </nav>
+
   <main id="main-content">
-    <section class="hero" id="home" aria-label="Hero section">
-      <div class="hero-inner">
-        <h1>
-          <span class="code">Code</span>
-          <span class="game">Game</span>
-          <span class="sleep">Sleep.</span>
-        </h1>
-        
-        <div class="icon-trio">
-          <div class="icon-wrapper">
-            <svg class="hero-icon code-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-              <!-- Code brackets - sharp and clear -->
-              <polyline points="7 5 3 12 7 19" stroke-width="3"/>
-              <polyline points="17 5 21 12 17 19" stroke-width="3"/>
-              
-              <!-- Code lines inside - bold and clear -->
-              <line x1="10" y1="8" x2="14" y2="8" stroke-width="3"/>
-              <line x1="10" y1="12" x2="14" y2="12" stroke-width="3"/>
-              <line x1="10" y1="16" x2="13" y2="16" stroke-width="3"/>
-            </svg>
+
+    <!-- SECTION 1: WELCOME INFO (Home) -->
+    <section class="game-panel" id="welcome" aria-label="Welcome Info">
+      <div class="welcome-card glass-panel">
+        <div class="card-header">
+          <h3>ALLIANCE STATUS</h3>
+          <span class="badge ur">ACTIVE</span>
+        </div>
+        <div class="alliance-branding">
+          <h2>WELCOME DTSM</h2>
+          <p class="subtitle">Just Built. Under Construction.</p>
+        </div>
+        <div class="stats-grid-mini">
+          <div class="stat-box">
+            <span class="label">MEMBERS</span>
+            <span class="value">95/100</span>
           </div>
-          
-          <div class="divider"></div>
-          
-          <div class="icon-wrapper">
-            <svg class="hero-icon game-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-              <!-- Controller body - bold outline -->
-              <rect x="5" y="9" width="14" height="10" rx="4" stroke-width="3"/>
-              
-              <!-- Left D-pad - clear cross -->
-              <rect x="6.5" y="11.5" width="5" height="5" rx="0.5" fill="currentColor" opacity="0.2"/>
-              <line x1="9" y1="10" x2="9" y2="18" stroke-width="3"/>
-              <line x1="6" y1="14" x2="12" y2="14" stroke-width="3"/>
-              
-              <!-- Right action buttons - clear circles -->
-              <circle cx="16.5" cy="12" r="2.5" stroke-width="2.5"/>
-              <circle cx="18" cy="15" r="2.5" stroke-width="2.5"/>
-              <circle cx="16.5" cy="17.5" r="2" stroke-width="2.5"/>
-            </svg>
+          <div class="stat-box">
+            <span class="label">POWER</span>
+            <span class="value">500M</span>
           </div>
-          
-          <div class="divider"></div>
-          
-          <div class="icon-wrapper">
-            <svg class="hero-icon sleep-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-              <!-- Moon - sharp crescent -->
-              <path d="M8.5 6c2.75 0 5 2.25 5 5s-2.25 5-5 5" stroke-width="3"/>
-              
-              <!-- Moon fill for depth -->
-              <path d="M8.5 6c2.75 0 5 2.25 5 5s-2.25 5-5 5" fill="currentColor" opacity="0.1"/>
-              
-              <!-- ZZZ letters - bold and clear -->
-              <!-- Big Z -->
-              <path d="M16 7 L20 7 L17 11 L21 11" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              
-              <!-- Medium Z -->
-              <path d="M17 13 L20 13 L18.5 16 L21 16" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              
-              <!-- Small Z -->
-              <path d="M18 17.5 L20 17.5 L19 19 L21 19" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              
-              <!-- Stars - clear dots -->
-              <circle cx="6" cy="7" r="1" fill="currentColor"/>
-              <circle cx="5" cy="17" r="0.8" fill="currentColor"/>
-            </svg>
+          <div class="stat-box">
+            <span class="label">SERVER</span>
+            <span class="value">#214</span>
           </div>
         </div>
-        
-        <p class="tagline">The Loop Never Ends.</p>
-        <div class="cta-row">
-          <a href="#projects" class="btn primary">See Projects</a>
-          <a href="#contact" class="btn ghost">Contact</a>
+
+        <!-- Message of the Day -->
+        <div class="motd-box">
+          <div class="motd-icon">📢</div>
+          <div class="motd-content">
+            <h4>NOTICE</h4>
+            <p>Focus on Radar tasks today! Don't forget to donate to tech. Capital war Sunday!</p>
+          </div>
+        </div>
+
+        <!-- Command Staff -->
+        <div class="command-staff">
+          <div class="staff-role">
+            <div class="avatar-frame r5-gold">
+              <img src="https://ui-avatars.com/api/?name=R5&background=FFD700&color=000" alt="Leader" />
+              <span class="role-badge">R5</span>
+            </div>
+            <span class="staff-name">CommanderX</span>
+          </div>
+          <div class="officer-row">
+            <div class="staff-role small">
+              <div class="avatar-frame r4-silver">
+                <img src="https://ui-avatars.com/api/?name=O1&background=C0C0C0&color=000" alt="Officer" />
+              </div>
+            </div>
+            <div class="staff-role small">
+              <div class="avatar-frame r4-silver">
+                <img src="https://ui-avatars.com/api/?name=O2&background=C0C0C0&color=000" alt="Officer" />
+              </div>
+            </div>
+            <div class="staff-role small">
+              <div class="avatar-frame r4-silver">
+                <img src="https://ui-avatars.com/api/?name=O3&background=C0C0C0&color=000" alt="Officer" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alliance Buffs -->
+        <div class="buff-strip">
+          <div class="buff-item">
+            <span class="buff-icon">🏗️</span>
+            <span class="buff-val">+15%</span>
+          </div>
+          <div class="buff-item">
+            <span class="buff-icon">🔬</span>
+            <span class="buff-val">+10%</span>
+          </div>
+          <div class="buff-item">
+            <span class="buff-icon">⚔️</span>
+            <span class="buff-val">+5%</span>
+          </div>
+          <div class="buff-item">
+            <span class="buff-icon">🛡️</span>
+            <span class="buff-val">+5%</span>
+          </div>
+        </div>
+
+        <div class="action-row">
+          <a href="#" class="btn-3d btn-green">Join Discord</a>
         </div>
       </div>
     </section>
 
-    <section class="about" id="about" aria-label="About section">
-      <h2>About</h2>
-      <p>
-        Welcome to <strong>CodeGameSleep™</strong> — a home base for my builds, designs,
-        and experiments. I mix <em>gaming</em> instincts, <em>clean code</em>, and
-        <em>neon-dark</em> aesthetics to ship things that are fast, fun, and polished.
-      </p>
-      
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-value">15+</div>
-          <div class="stat-label">Projects Shipped</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">50K+</div>
-          <div class="stat-label">Lines of Code</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">5+</div>
-          <div class="stat-label">Languages</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">∞</div>
-          <div class="stat-label">Commits</div>
-        </div>
+    <!-- SECTION 2: VS DUEL (Events) -->
+    <section class="game-panel hidden" id="events" aria-label="VS Duel Guide">
+      <h2 class="section-title">VS LEAGUE GUIDE</h2>
+      <div class="vs-schedule">
+        <!-- Day 1 -->
+        <article class="vs-card">
+          <div class="vs-day">
+            <span class="day-num">MON</span>
+            <span class="day-name">Radar</span>
+          </div>
+          <div class="vs-info">
+            <h4>Radar Expansion</h4>
+            <p>Use Stamina on Radar Tasks. Save Drone Data.</p>
+          </div>
+        </article>
+
+        <!-- Day 2 -->
+        <article class="vs-card">
+          <div class="vs-day">
+            <span class="day-num">TUE</span>
+            <span class="day-name">Base</span>
+          </div>
+          <div class="vs-info">
+            <h4>City Expansion</h4>
+            <p>Use Building Speedups. Buy UR Shards.</p>
+          </div>
+        </article>
+
+        <!-- Day 3 -->
+        <article class="vs-card">
+          <div class="vs-day">
+            <span class="day-num">WED</span>
+            <span class="day-name">Tech</span>
+          </div>
+          <div class="vs-info">
+            <h4>Scientific Research</h4>
+            <p>Use Tech Speedups. Open Valor chests.</p>
+          </div>
+        </article>
+
+        <!-- Day 4 -->
+        <article class="vs-card">
+          <div class="vs-day">
+            <span class="day-num">THU</span>
+            <span class="day-name">Hero</span>
+          </div>
+          <div class="vs-info">
+            <h4>Hero Training</h4>
+            <p>Use EXP and Recruit Tickets (Hero Day).</p>
+          </div>
+        </article>
+
+        <!-- Day 5 -->
+        <article class="vs-card">
+          <div class="vs-day">
+            <span class="day-num">FRI</span>
+            <span class="day-name">Train</span>
+          </div>
+          <div class="vs-info">
+            <h4>Total Mobilization</h4>
+            <p>Train Troops. Survivor Tokens.</p>
+          </div>
+        </article>
+
+        <!-- Day 6 -->
+        <article class="vs-card accent-red">
+          <div class="vs-day">
+            <span class="day-num">SAT</span>
+            <span class="day-name">Kill</span>
+          </div>
+          <div class="vs-info">
+            <h4>Enemy Buster</h4>
+            <p>Kill Enemy Troops. Shield up if offline!</p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="projects" id="projects" aria-label="Projects section">
-      <h2>Projects</h2>
-      <div class="filter-tabs">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="code">Code</button>
-        <button class="filter-btn" data-filter="game">Gaming</button>
-      </div>
-      <div class="cards">
-        <article class="card" data-category="code" tabindex="0">
+    <!-- SECTION 4: BASE VIEW (Moved from Tab 1) -->
+    <section class="game-panel hidden" id="base" aria-label="Base View">
+      <div class="base-container">
+        <div class="hero-card glass-panel">
           <div class="card-header">
-            <h3>Node Audit Tool</h3>
-            <div class="card-tags">
-              <span class="tag python">Python</span>
-              <span class="tag">Excel</span>
-            </div>
+            <h3>COMMANDER SQUAD</h3>
+            <span class="badge ur">UR</span>
           </div>
-          <p>Python + Excel automation to speed up field workflows and data clean‑up.</p>
-          <div class="card-links">
-            <a href="#" class="card-link">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              View Code
-            </a>
-            <a href="#" class="card-link">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5a.75.75 0 0 1 1.5 0Z"/></svg>
-              Live Demo
-            </a>
+          <div class="squad-visual">
+            <div class="hero-slot main-hero">
+              <div class="hero-level">Lvl 150</div>
+            </div>
+            <div class="hero-slot sub-hero"></div>
+            <div class="hero-slot sub-hero"></div>
           </div>
-        </article>
-        <article class="card" data-category="code" tabindex="0">
-          <div class="card-header">
-            <h3>Workout Buddy</h3>
-            <div class="card-tags">
-              <span class="tag swift">Swift</span>
-              <span class="tag">SwiftUI</span>
-              <span class="tag">iOS</span>
+          <div class="squad-stats">
+            <div class="stat-row">
+              <span>ATK</span>
+              <span class="value text-danger">2.8M</span>
             </div>
-          </div>
-          <p>iOS/SwiftUI app for tracking sets, timers, and Apple Watch integration.</p>
-          <div class="card-links">
-            <a href="#" class="card-link">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              View Code
-            </a>
-          </div>
-        </article>
-        <article class="card" data-category="code" tabindex="0">
-          <div class="card-header">
-            <h3>GarzaDev Admin</h3>
-            <div class="card-tags">
-              <span class="tag js">JavaScript</span>
-              <span class="tag">React</span>
+            <div class="stat-row">
+              <span>DEF</span>
+              <span class="value text-primary">1.9M</span>
             </div>
-          </div>
-          <p>Lightweight admin UI to post Dev Daily and manage site content.</p>
-          <div class="card-links">
-            <a href="#" class="card-link">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              View Code
-            </a>
-            <a href="#" class="card-link">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5a.75.75 0 0 1 1.5 0Z"/></svg>
-              Live Demo
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="gaming-clips" id="gaming" aria-label="Gaming clips section">
-      <h2>🎮 Gaming Clips</h2>
-      <p class="section-intro">Check out epic moments from the community. Got a clutch play? Share it with us!</p>
-      
-      <div class="clips-grid">
-        <article class="clip-card" tabindex="0" role="button" aria-label="Play clip: Insane Clutch 1v5">
-          <div class="clip-thumbnail">
-            <div class="play-icon" aria-hidden="true">▶</div>
-            <div class="clip-overlay">
-              <span class="clip-duration">0:45</span>
-            </div>
-          </div>
-          <div class="clip-info">
-            <h3>Insane Clutch 1v5</h3>
-            <p class="clip-meta">
-              <span class="clip-game">Valorant</span>
-              <span class="clip-views">👁 2.3K views</span>
-            </p>
-            <div class="clip-tags">
-              <span class="tag gaming">Clutch</span>
-              <span class="tag gaming">Ace</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="clip-card" tabindex="0" role="button" aria-label="Play clip: Perfect Speedrun">
-          <div class="clip-thumbnail">
-            <div class="play-icon" aria-hidden="true">▶</div>
-            <div class="clip-overlay">
-              <span class="clip-duration">1:12</span>
-            </div>
-          </div>
-          <div class="clip-info">
-            <h3>Perfect Speedrun</h3>
-            <p class="clip-meta">
-              <span class="clip-game">Elden Ring</span>
-              <span class="clip-views">👁 5.1K views</span>
-            </p>
-            <div class="clip-tags">
-              <span class="tag gaming">Speedrun</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="clip-card" tabindex="0" role="button" aria-label="Play clip: Epic Build Battle Win">
-          <div class="clip-thumbnail">
-            <div class="play-icon" aria-hidden="true">▶</div>
-            <div class="clip-overlay">
-              <span class="clip-duration">0:32</span>
-            </div>
-          </div>
-          <div class="clip-info">
-            <h3>Epic Build Battle Win</h3>
-            <p class="clip-meta">
-              <span class="clip-game">Fortnite</span>
-              <span class="clip-views">👁 1.8K views</span>
-            </p>
-            <div class="clip-tags">
-              <span class="tag gaming">Victory</span>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="submit-clip-section">
-        <div class="submit-card">
-          <h3>📤 Submit Your Clip</h3>
-          <p>Got an epic gaming moment? Share it with the community and get featured on our TikTok!</p>
-          
-          <form class="clip-submit-form" id="clipSubmitForm">
-            <div class="form-group">
-              <label for="clipperName">Your Name / Gamer Tag</label>
-              <input type="text" id="clipperName" name="clipperName" placeholder="xXProGamer420Xx" required aria-describedby="clipperName-error">
-              <span class="error-message" id="clipperName-error" role="alert" aria-live="polite"></span>
-            </div>
-
-            <div class="form-group">
-              <label for="clipGame">Game</label>
-              <input type="text" id="clipGame" name="clipGame" placeholder="e.g., Valorant, Fortnite, Apex" required aria-describedby="clipGame-error">
-              <span class="error-message" id="clipGame-error" role="alert" aria-live="polite"></span>
-            </div>
-
-            <div class="form-group">
-              <label for="clipUrl">Clip URL (YouTube, Twitch, etc.)</label>
-              <input type="url" id="clipUrl" name="clipUrl" placeholder="https://youtube.com/watch?v=..." required aria-describedby="clipUrl-error">
-              <span class="error-message" id="clipUrl-error" role="alert" aria-live="polite"></span>
-            </div>
-
-            <div class="form-group">
-              <label for="clipDescription">Description</label>
-              <textarea id="clipDescription" name="clipDescription" rows="3" placeholder="Tell us what makes this clip epic..." required aria-describedby="clipDescription-error"></textarea>
-              <span class="error-message" id="clipDescription-error" role="alert" aria-live="polite"></span>
-            </div>
-
-            <div class="form-group checkbox-group">
-              <label class="checkbox-label">
-                <input type="checkbox" id="tiktokConsent" name="tiktokConsent" required>
-                <span>I consent to having my clip featured on CodeGameSleep's TikTok page</span>
-              </label>
-            </div>
-
-            <div class="form-group checkbox-group">
-              <label class="checkbox-label">
-                <input type="checkbox" id="creditConsent" name="creditConsent">
-                <span>Credit my name/tag when posted</span>
-              </label>
-            </div>
-
-            <button type="submit" class="btn primary submit-btn">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="margin-right: 8px;">
-                <path d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.836V10.33a1 1 0 0 1 .816-.983L8.5 8 1.316 6.653A1 1 0 0 1 .5 5.67V1.163Z"/>
-              </svg>
-              Submit Clip
-            </button>
-          </form>
-
-          <div class="submit-success" id="submitSuccess" style="display: none;">
-            <div class="success-icon">✓</div>
-            <h4>Clip Submitted!</h4>
-            <p>Thanks for sharing! We'll review your clip and may feature it on our TikTok page.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contact" aria-label="Contact section">
-      <h2>Contact</h2>
-      <p>Hit me up for collabs or freelance work.</p>
+    <!-- SECTION 3: ALLIANCE MAIL (Reports) -->
+    <section class="game-panel hidden" id="mail" aria-label="Alliance Mailbox">
+      <h2 class="section-title">ALLIANCE MAIL</h2>
+      <div class="mail-list">
+        <div class="mail-item unread">
+          <div class="mail-icon battle">⚔️</div>
+          <div class="mail-content">
+            <h4>Victory vs. Zombie Lvl 50</h4>
+            <p>Loot: 50k Gold, 20k Steel</p>
+            <span class="time">10m ago</span>
+          </div>
+          <button class="btn-claim btn-3d btn-blue">Claim</button>
+        </div>
+
+        <div class="mail-item">
+          <div class="mail-icon gift">🎁</div>
+          <div class="mail-content">
+            <h4>Alliance Gift Lvl 5</h4>
+            <p>From: CommanderX</p>
+            <span class="time">2h ago</span>
+          </div>
+          <button class="btn-claim btn-3d btn-green">Claim</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-label="Join Alliance">
+      <h2>Enlist Now</h2>
+      <p>Requirements: HQ Lvl 25+, 10M Power.</p>
       <ul class="contact-list">
-        <li>Email: <a href="mailto:hey@codegamesleep.com">hey@codegamesleep.com</a></li>
-        <li>X/Twitter: <a href="#" rel="nofollow">/codegamesleep</a></li>
-        <li>GitHub: <a href="#" rel="nofollow">/codegamesleep</a></li>
+        <li>Discord: <a href="#">discord.gg/alliance</a></li>
+        <li>Leader: <a href="#">CommanderX</a></li>
       </ul>
     </section>
   </main>
 
+  <!-- Add padding for bottom nav -->
+  <div style="height: 80px;"></div>
+
   <footer class="site-footer">
-    <p>© 2025 <span class="mark">CodeGameSleep™</span>. All rights reserved.</p>
+    <p>© 2025 <span class="mark">Last War Alliance Hub</span>. All rights reserved.</p>
   </footer>
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M12 19V5M5 12l7-7 7 7"/>
+      <path d="M12 19V5M5 12l7-7 7 7" />
     </svg>
   </button>
 
   <script src="script.js"></script>
 </body>
+
 </html>

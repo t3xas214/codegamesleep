@@ -36,7 +36,7 @@
             alt="Commander Avatar" />
         </div>
         <div class="power-display">
-          <span class="power-label">Power</span>
+          <span class="power-label" data-i18n="power">Power</span>
           <span class="power-value">12.5M</span>
         </div>
       </div>
@@ -59,6 +59,13 @@
           <span class="res-add">+</span>
         </div>
       </div>
+
+      <!-- Language Selector -->
+      <div class="lang-selector">
+        <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
+        <button class="lang-btn" data-lang="pt" aria-label="Português">PT</button>
+      </div>
     </div>
   </header>
 
@@ -66,19 +73,19 @@
   <nav class="bottom-nav">
     <a href="#welcome" class="nav-item active">
       <div class="nav-icon">ℹ️</div>
-      <span>Info</span>
+      <span data-i18n="nav_info">Info</span>
     </a>
     <a href="#events" class="nav-item">
       <div class="nav-icon">⚔️</div>
-      <span>VS Duel</span>
+      <span data-i18n="nav_duel">VS Duel</span>
     </a>
     <a href="#mail" class="nav-item">
       <div class="nav-icon">📩</div>
-      <span>Mail</span>
+      <span data-i18n="nav_mail">Mail</span>
     </a>
     <a href="#base" class="nav-item">
       <div class="nav-icon">🏠</div>
-      <span>Base</span>
+      <span data-i18n="nav_base">Base</span>
     </a>
   </nav>
 
@@ -88,24 +95,24 @@
     <section class="game-panel" id="welcome" aria-label="Welcome Info">
       <div class="welcome-card glass-panel">
         <div class="card-header">
-          <h3>ALLIANCE STATUS</h3>
-          <span class="badge ur">ACTIVE</span>
+          <h3 data-i18n="alliance_status">ALLIANCE STATUS</h3>
+          <span class="badge ur" data-i18n="status_active">ACTIVE</span>
         </div>
         <div class="alliance-branding">
           <h2>WELCOME DTSM</h2>
-          <p class="subtitle">Just Built. Under Construction.</p>
+          <p class="subtitle" data-i18n="subtitle">Just Built. Under Construction.</p>
         </div>
         <div class="stats-grid-mini">
           <div class="stat-box">
-            <span class="label">MEMBERS</span>
+            <span class="label" data-i18n="label_members">MEMBERS</span>
             <span class="value">95/100</span>
           </div>
           <div class="stat-box">
-            <span class="label">POWER</span>
+            <span class="label" data-i18n="label_power">POWER</span>
             <span class="value">500M</span>
           </div>
           <div class="stat-box">
-            <span class="label">SERVER</span>
+            <span class="label" data-i18n="label_server">SERVER</span>
             <span class="value">#214</span>
           </div>
         </div>
@@ -114,8 +121,8 @@
         <div class="motd-box">
           <div class="motd-icon">📢</div>
           <div class="motd-content">
-            <h4>NOTICE</h4>
-            <p>Focus on Radar tasks today! Don't forget to donate to tech. Capital war Sunday!</p>
+            <h4 data-i18n="motd_title">NOTICE</h4>
+            <p data-i18n="motd_msg">Focus on Radar tasks today! Don't forget to donate to tech. Capital war Sunday!</p>
           </div>
         </div>
 
@@ -140,8 +147,9 @@
               </div>
             </div>
             <div class="staff-role small">
-              <div class="avatar-frame r4-silver">
-                <img src="https://ui-avatars.com/api/?name=O3&background=C0C0C0&color=000" alt="Officer" />
+              <div class="avatar-frame r4-silver vacant" aria-label="Vacant Position">
+                <img src="images/icon-plus.png" alt="Vacant"
+                  onerror="this.src='https://ui-avatars.com/api/?name=%2B&background=333&color=555'" />
               </div>
             </div>
           </div>
@@ -168,84 +176,84 @@
         </div>
 
         <div class="action-row">
-          <a href="#" class="btn-3d btn-green">Join Discord</a>
+          <a href="#" class="btn-3d btn-green" data-i18n="join_discord">Join Discord</a>
         </div>
       </div>
     </section>
 
     <!-- SECTION 2: VS DUEL (Events) -->
     <section class="game-panel hidden" id="events" aria-label="VS Duel Guide">
-      <h2 class="section-title">VS LEAGUE GUIDE</h2>
+      <h2 class="section-title" data-i18n="vs_title">VS LEAGUE GUIDE</h2>
       <div class="vs-schedule">
         <!-- Day 1 -->
         <article class="vs-card">
           <div class="vs-day">
-            <span class="day-num">MON</span>
-            <span class="day-name">Radar</span>
+            <span class="day-num" data-i18n="day_mon">MON</span>
+            <span class="day-name" data-i18n="day_radar">Radar</span>
           </div>
           <div class="vs-info">
-            <h4>Radar Expansion</h4>
-            <p>Use Stamina on Radar Tasks. Save Drone Data.</p>
+            <h4 data-i18n="card_radar_title">Radar Expansion</h4>
+            <p data-i18n="card_radar_desc">Use Stamina on Radar Tasks. Save Drone Data.</p>
           </div>
         </article>
 
         <!-- Day 2 -->
         <article class="vs-card">
           <div class="vs-day">
-            <span class="day-num">TUE</span>
-            <span class="day-name">Base</span>
+            <span class="day-num" data-i18n="day_tue">TUE</span>
+            <span class="day-name" data-i18n="day_base">Base</span>
           </div>
           <div class="vs-info">
-            <h4>City Expansion</h4>
-            <p>Use Building Speedups. Buy UR Shards.</p>
+            <h4 data-i18n="card_base_title">City Expansion</h4>
+            <p data-i18n="card_base_desc">Use Building Speedups. Buy UR Shards.</p>
           </div>
         </article>
 
         <!-- Day 3 -->
         <article class="vs-card">
           <div class="vs-day">
-            <span class="day-num">WED</span>
-            <span class="day-name">Tech</span>
+            <span class="day-num" data-i18n="day_wed">WED</span>
+            <span class="day-name" data-i18n="day_tech">Tech</span>
           </div>
           <div class="vs-info">
-            <h4>Scientific Research</h4>
-            <p>Use Tech Speedups. Open Valor chests.</p>
+            <h4 data-i18n="card_tech_title">Scientific Research</h4>
+            <p data-i18n="card_tech_desc">Use Tech Speedups. Open Valor chests.</p>
           </div>
         </article>
 
         <!-- Day 4 -->
         <article class="vs-card">
           <div class="vs-day">
-            <span class="day-num">THU</span>
-            <span class="day-name">Hero</span>
+            <span class="day-num" data-i18n="day_thu">THU</span>
+            <span class="day-name" data-i18n="day_hero">Hero</span>
           </div>
           <div class="vs-info">
-            <h4>Hero Training</h4>
-            <p>Use EXP and Recruit Tickets (Hero Day).</p>
+            <h4 data-i18n="card_hero_title">Hero Training</h4>
+            <p data-i18n="card_hero_desc">Use EXP and Recruit Tickets (Hero Day).</p>
           </div>
         </article>
 
         <!-- Day 5 -->
         <article class="vs-card">
           <div class="vs-day">
-            <span class="day-num">FRI</span>
-            <span class="day-name">Train</span>
+            <span class="day-num" data-i18n="day_fri">FRI</span>
+            <span class="day-name" data-i18n="day_train">Train</span>
           </div>
           <div class="vs-info">
-            <h4>Total Mobilization</h4>
-            <p>Train Troops. Survivor Tokens.</p>
+            <h4 data-i18n="card_train_title">Total Mobilization</h4>
+            <p data-i18n="card_train_desc">Train Troops. Survivor Tokens.</p>
           </div>
         </article>
 
         <!-- Day 6 -->
         <article class="vs-card accent-red">
           <div class="vs-day">
-            <span class="day-num">SAT</span>
-            <span class="day-name">Kill</span>
+            <span class="day-num" data-i18n="day_sat">SAT</span>
+            <span class="day-name" data-i18n="day_kill">Kill</span>
           </div>
           <div class="vs-info">
-            <h4>Enemy Buster</h4>
-            <p>Kill Enemy Troops. Shield up if offline!</p>
+            <h4 data-i18n="card_kill_title">Enemy Buster</h4>
+            <p data-i18n="card_kill_desc">Kill Enemy Troops. Shield up if offline!</p>
           </div>
         </article>
       </div>
@@ -256,12 +264,12 @@
       <div class="base-container">
         <div class="hero-card glass-panel">
           <div class="card-header">
-            <h3>COMMANDER SQUAD</h3>
+            <h3 data-i18n="commander_squad">COMMANDER SQUAD</h3>
             <span class="badge ur">UR</span>
           </div>
           <div class="squad-visual">
             <div class="hero-slot main-hero">
-              <div class="hero-level">Lvl 150</div>
+              <div class="hero-level" data-i18n="lvl">Lvl 150</div>
             </div>
             <div class="hero-slot sub-hero"></div>
             <div class="hero-slot sub-hero"></div>
@@ -282,33 +290,33 @@
 
     <!-- SECTION 3: ALLIANCE MAIL (Reports) -->
     <section class="game-panel hidden" id="mail" aria-label="Alliance Mailbox">
-      <h2 class="section-title">ALLIANCE MAIL</h2>
+      <h2 class="section-title" data-i18n="mail_title">ALLIANCE MAIL</h2>
       <div class="mail-list">
         <div class="mail-item unread">
           <div class="mail-icon battle">⚔️</div>
           <div class="mail-content">
-            <h4>Victory vs. Zombie Lvl 50</h4>
-            <p>Loot: 50k Gold, 20k Steel</p>
-            <span class="time">10m ago</span>
+            <h4 data-i18n="mail_1_title">Victory vs. Zombie Lvl 50</h4>
+            <p data-i18n="mail_1_desc">Loot: 50k Gold, 20k Steel</p>
+            <span class="time" data-i18n="time_10m">10m ago</span>
           </div>
-          <button class="btn-claim btn-3d btn-blue">Claim</button>
+          <button class="btn-claim btn-3d btn-blue" data-i18n="btn_claim">Claim</button>
         </div>
 
         <div class="mail-item">
           <div class="mail-icon gift">🎁</div>
           <div class="mail-content">
-            <h4>Alliance Gift Lvl 5</h4>
-            <p>From: CommanderX</p>
-            <span class="time">2h ago</span>
+            <h4 data-i18n="mail_2_title">Alliance Gift Lvl 5</h4>
+            <p data-i18n="mail_2_desc">From: CommanderX</p>
+            <span class="time" data-i18n="time_2h">2h ago</span>
           </div>
-          <button class="btn-claim btn-3d btn-green">Claim</button>
+          <button class="btn-claim btn-3d btn-green" data-i18n="btn_claim">Claim</button>
         </div>
       </div>
     </section>
 
     <section class="contact" id="contact" aria-label="Join Alliance">
-      <h2>Enlist Now</h2>
-      <p>Requirements: HQ Lvl 25+, 10M Power.</p>
+      <h2 data-i18n="enlist_now">Enlist Now</h2>
+      <p data-i18n="reqs">Requirements: HQ Lvl 25+, 10M Power.</p>
       <ul class="contact-list">
         <li>Discord: <a href="#">discord.gg/alliance</a></li>
         <li>Leader: <a href="#">CommanderX</a></li>

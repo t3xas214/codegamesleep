@@ -4,22 +4,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Under Construction - CodeGameSleep</title>
-  <meta name="description" content="Site under construction. Coming soon!">
+  <meta name="description" content="Last War: Survival Alliance Hub - Dragon Storm [DSTM] Server 2067">
+  <title>Dragon Storm [DSTM] | Last War Alliance</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;500;700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body>
-  <div class="floating-message">Hi Bibyh 👋</div>
+  <!-- Animated Backgrounds -->
+  <div id="particles-js"></div>
+  <div class="scanlines"></div>
 
+  <!-- HUD Decor -->
+  <div class="hud-corner top-left"></div>
+  <div class="hud-corner top-right"></div>
+  <div class="hud-corner bottom-left"></div>
+  <div class="hud-corner bottom-right"></div>
+  <div class="hud-line top"></div>
+  <div class="hud-line bottom"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="pt">PT</button>
+      </div>
+
+      <!-- Alliance Logo -->
+      <div class="logo-container">
+        <img src="images/dstm-logo.png" alt="Dragon Storm Logo" class="alliance-logo">
+      </div>
+
+      <div class="glitch-wrapper">
+        <h1 class="alliance-name" data-text="DRAGON STORM">DRAGON STORM</h1>
+      </div>
+      <div class="server-badge">
+        <span class="server-label" data-i18n="server">SERVER</span>
+        <span class="server-val">2067</span>
+      </div>
+      <div class="hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- Main Container -->
   <div class="container">
-    <img src="images/tractor.png" alt="Construction Tractor" class="tractor">
-    <h1>Under Construction</h1>
-    <h1 class="portuguese">Em Construção</h1>
-    <p>We're building something awesome. Check back soon!</p>
-    <p class="portuguese">Estamos construindo algo incrível. Volte em breve!</p>
+
+    <!-- Server Clock -->
+    <section class="server-clock glass-panel" data-tilt>
+      <div class="panel-header" data-i18n="systemTime">SYSTEM TIME</div>
+      <div class="clock-display" id="utcClock">00:00:00</div>
+      <p class="clock-label" data-i18n="gameTime">UTC / GAME TIME</p>
+    </section>
+
+    <!-- Leadership Board -->
+    <section class="leadership-section">
+      <h2 class="section-title" data-i18n="commandStaff">COMMAND STAFF</h2>
+      <div class="leadership-grid">
+
+        <!-- Leader Card -->
+        <div class="leader-card glass-panel" data-tilt>
+          <div class="card-border"></div>
+          <div class="avatar">👑</div>
+          <h3 class="role" data-i18n="roleLeader">LEADER</h3>
+          <span class="rank">R5</span>
+          <p class="leader-name">Commander Alpha</p>
+          <p class="about" data-i18n="descLeader">Strategic mastermind. Alliance Commander.</p>
+        </div>
+
+        <!-- Warlord Card -->
+        <div class="leader-card glass-panel" data-tilt>
+          <div class="card-border"></div>
+          <div class="avatar">⚔️</div>
+          <h3 class="role" data-i18n="roleWarlord">WARLORD</h3>
+          <span class="rank">R4</span>
+          <p class="leader-name">Battle Chief</p>
+          <p class="about" data-i18n="descWarlord">Military Operations & War Strategy.</p>
+        </div>
+
+        <!-- Muse Card -->
+        <div class="leader-card glass-panel" data-tilt>
+          <div class="card-border"></div>
+          <div class="avatar">🎭</div>
+          <h3 class="role" data-i18n="roleMuse">MUSE</h3>
+          <span class="rank">R4</span>
+          <p class="leader-name">Diplomat Prime</p>
+          <p class="about" data-i18n="descMuse">Diplomacy & Public Relations.</p>
+        </div>
+
+        <!-- Recruiter Card -->
+        <div class="leader-card glass-panel" data-tilt>
+          <div class="card-border"></div>
+          <div class="avatar">🎯</div>
+          <h3 class="role" data-i18n="roleRecruiter">RECRUITER</h3>
+          <span class="rank">R4</span>
+          <p class="leader-name">Scout Master</p>
+          <p class="about" data-i18n="descRecruiter">Recruitment & Talent Acquisition.</p>
+        </div>
+
+        <!-- Butler Card (NEW) -->
+        <div class="leader-card glass-panel" data-tilt>
+          <div class="card-border"></div>
+          <div class="avatar">🤵</div>
+          <h3 class="role" data-i18n="roleButler">BUTLER</h3>
+          <span class="rank">R4</span>
+          <p class="leader-name">The Steward</p>
+          <p class="about" data-i18n="descButler">Resource Management & Logistics.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TACTICAL GEAR GUIDE (NEW) -->
+    <section class="gear-section">
+      <h2 class="section-title" data-i18n="gearTitle">[ TACTICAL GEAR GUIDE ]</h2>
+
+      <div class="gear-grid" id="gearGrid">
+        <!-- Card 1: Golden Rules -->
+        <div class="gear-card glass-panel" data-tilt>
+          <div class="card-border"></div>
+          <div class="gear-icon">⚠️</div>
+          <h3 data-i18n="gearRuleTitle">THE GOLDEN RULES</h3>
+          <ul class="gear-list" id="gearRulesList">
+            <!-- JS Populated -->
+          </ul>
+        </div>
+
+        <!-- Card 2: Build Order -->
+        <div class="gear-card glass-panel" data-tilt>
+          <div class="card-border"></div>
+          <div class="gear-icon">🔧</div>
+          <h3 data-i18n="gearBuildTitle">BUILD ORDER</h3>
+          <ol class="gear-list ordered" id="gearBuildList">
+            <!-- JS Populated -->
+          </ol>
+        </div>
+
+        <!-- Card 3: Leveling Strategy -->
+        <div class="gear-card glass-panel" data-tilt>
+          <div class="card-border"></div>
+          <div class="gear-icon">📈</div>
+          <h3 data-i18n="gearLevelTitle">LEVELING STRATEGY</h3>
+          <div class="gear-phases" id="gearLevelContent">
+            <!-- JS Populated -->
+          </div>
+        </div>
+      </div>
+
+      <button class="tips-toggle" data-i18n="viewGearStats">▶ VIEW FULL GEAR STATS</button>
+    </section>
+
+    <!-- VS Duel Schedule -->
+    <section class="schedule-section">
+      <h2 class="section-title" data-i18n="scheduleTitle">OPERATIONS SCHEDULE</h2>
+
+      <!-- Day Tabs -->
+      <div class="day-tabs" id="dayTabs">
+        <button class="day-tab" data-day="0" data-i18n="mon">MON</button>
+        <button class="day-tab" data-day="1" data-i18n="tue">TUE</button>
+        <button class="day-tab" data-day="2" data-i18n="wed">WED</button>
+        <button class="day-tab" data-day="3" data-i18n="thu">THU</button>
+        <button class="day-tab" data-day="4" data-i18n="fri">FRI</button>
+        <button class="day-tab" data-day="5" data-i18n="sat">SAT</button>
+      </div>
+
+      <!-- Day Content -->
+      <div class="day-content glass-panel" id="dayContent" data-tilt>
+        <div class="event-icon" id="eventIcon">📡</div>
+        <h3 class="event-day" id="eventDay">MONDAY</h3>
+        <p class="event-name" id="eventName">RADAR & EXPANSION</p>
+
+        <!-- Tips Toggle -->
+        <button class="tips-toggle" id="tipsToggle" data-i18n="showEnds">▶ ACCESS TARGET GUIDE</button>
+
+        <!-- Tips Content -->
+        <div class="tips-content" id="tipsContent">
+          <div class="tips-grid">
+            <!-- F2P Guide -->
+            <div class="tip-box f2p">
+              <h4 data-i18n="f2pTitle">💎 F2P STRATEGY</h4>
+              <ul id="f2pTips">
+                <!-- Content populated by JS -->
+              </ul>
+            </div>
+
+            <!-- Spender Guide -->
+            <div class="tip-box spender">
+              <h4 data-i18n="vipTitle">💰 VIP STRATEGY</h4>
+              <ul id="spenderTips">
+                <!-- Content populated by JS -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Arms Race Timer -->
+    <section class="tools-section">
+      <h2 class="section-title" data-i18n="toolsTitle">TACTICAL TOOLS</h2>
+      <div class="arms-race-timer glass-panel" data-tilt>
+        <div class="timer-header" data-i18n="armsRaceTitle">ARMS RACE COUNTDOWN</div>
+        <div class="countdown-display" id="armsRaceTimer">00:00:00</div>
+        <p class="timer-info" data-i18n="nextBlock">NEXT EVENT BLOCK</p>
+        <div class="timer-icon">⚔️</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>DRAGON STORM [DSTM] // SERVER 2067 // SYSTEM ONLINE</p>
+    </footer>
+
   </div>
+
+  <!-- JavaScript -->
+  <script src="tilt.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>

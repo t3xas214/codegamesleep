@@ -493,20 +493,38 @@ const translations = {
 
 // ===== HERO RECOMMENDATION DATA =====
 const heroData = [
-    // S-Tier — Must-have heroes
-    { icon: '💥', name: 'Kimberly', role: 'TANK — AoE DPS', tier: 'S', desc: 'Devastating AoE attacker. Excels at clearing waves in PvE & PvP. Must-have.' },
-    { icon: '✈️', name: 'DVA', role: 'AIRCRAFT — Single Target', tier: 'S', desc: 'Exceptional burst damage. Ideal for eliminating priority targets and bosses.' },
-    { icon: '🛡️', name: 'Williams', role: 'TANK — Defense', tier: 'S', desc: 'Ultimate defensive tank. Team-wide damage reduction. Essential frontline.' },
-    { icon: '🚀', name: 'Tesla', role: 'MISSILE — Energy DPS', tier: 'S', desc: 'High energy damage. Destroys armored enemies. Indispensable late-game.' },
-    { icon: '⭐', name: 'Marshall', role: 'TANK — Support', tier: 'S', desc: 'Amplifies team attack & shields allies. Core mid-to-late game support.' },
-    { icon: '🏰', name: 'Murphy', role: 'TANK — Defense', tier: 'S', desc: 'Strong defensive stats. HP & attack team buffs. Scales with battle pressure.' },
-    // A-Tier — Strong picks
-    { icon: '⚡', name: 'Schuyler', role: 'AIRCRAFT — CC', tier: 'A', desc: 'Stuns and paralyzes enemies. Great PvP disruption and crowd control.' },
-    { icon: '🎯', name: 'Fiona', role: 'MISSILE — Multi-target', tier: 'A', desc: 'Versatile multi-target DPS. Effective in PvE missions and mid-scale PvP.' },
-    { icon: '🔥', name: 'Morrison', role: 'AIRCRAFT — DPS', tier: 'A', desc: 'Strong damage dealer for aircraft compositions. Versatile attacker.' },
-    // B-Tier — Situational
-    { icon: '☠️', name: 'Venom', role: 'MISSILE — Poison DoT', tier: 'B', desc: 'Poison damage specialist. Best in long endurance battles and PvE raids.' },
-    { icon: '⚔️', name: 'Richard', role: 'TANK — Bruiser', tier: 'B', desc: 'Moderate AoE damage as frontline bruiser. Good for PvE wave clearing.' }
+    // ===== TANK HEROES =====
+    { icon: '💥', name: 'Kimberly', role: 'ATK TANK — AoE DPS', tier: 'S', type: 'tank', desc: 'Devastating AoE attacker. Excels at clearing waves in PvE & PvP. Must-have damage dealer.' },
+    { icon: '🛡️', name: 'Williams', role: 'DEF TANK — Shield Wall', tier: 'S', type: 'tank', desc: 'Ultimate defensive tank. Team-wide damage reduction. Essential for PvP & war rallies.' },
+    { icon: '🏰', name: 'Murphy', role: 'DEF TANK — HP Buffer', tier: 'S', type: 'tank', desc: 'Strong defense with HP & attack team buffs. Reliable frontline that scales with battle pressure.' },
+    { icon: '⭐', name: 'Marshall', role: 'SUP TANK — Team Buffer', tier: 'S', type: 'tank', desc: 'Amplifies team attack & reduces cooldowns. Core mid-to-late game support tank.' },
+    { icon: '🔥', name: 'Mason', role: 'ATK TANK — Burst DPS', tier: 'A', type: 'tank', desc: 'Raging Marksman. High burst damage output. Strong when upgraded to UR rarity.' },
+    { icon: '💀', name: 'Scarlett', role: 'DEF TANK — Mitigator', tier: 'A', type: 'tank', desc: 'Incredible damage mitigator at UR. Can replace Williams in some team compositions.' },
+    { icon: '☣️', name: 'Violet', role: 'DEF TANK — Toxic DPS', tier: 'B', type: 'tank', desc: 'Reliable defender with toxic abilities. Self-buffing defensive skills.' },
+    { icon: '⚔️', name: 'Richard', role: 'ATK TANK — Bruiser', tier: 'B', type: 'tank', desc: 'Moderate multi-target damage. Good for PvE wave clearing but risky in PvP.' },
+    { icon: '🔧', name: 'Stetmann', role: 'ATK TANK — Sustained DPS', tier: 'B', type: 'tank', desc: 'Adds significant sustained damage potential. Valuable for long fights.' },
+    { icon: '🐲', name: 'Drake', role: 'DEF TANK — Basic', tier: 'C', type: 'tank', desc: 'Mediocre tank. Struggles to absorb damage compared to higher-tier options.' },
+
+    // ===== AIRCRAFT HEROES =====
+    { icon: '✈️', name: 'DVA', role: 'ATK AIR — Boss Killer', tier: 'S', type: 'aircraft', desc: 'Exceptional burst damage. Ideal for eliminating priority targets and bosses.' },
+    { icon: '🔥', name: 'Morrison', role: 'ATK AIR — Damage Dealer', tier: 'S', type: 'aircraft', desc: 'Massive damage with defense reduction. Top-tier aircraft DPS.' },
+    { icon: '⚡', name: 'Schuyler', role: 'ATK AIR — CC Specialist', tier: 'A', type: 'aircraft', desc: 'Stuns & paralyzes enemies. Great PvP disruption and formation breaker.' },
+    { icon: '🛡️', name: 'Cage', role: 'DEF AIR — Frontline Guard', tier: 'A', type: 'aircraft', desc: 'Best aircraft defense hero. Boosts front-row defense & reduces zombie damage.' },
+    { icon: '🎯', name: 'Sarah', role: 'SUP AIR — PvE Booster', tier: 'A', type: 'aircraft', desc: 'Boosts back-row damage vs zombies. Valuable for PvE, upgradeable to UR.' },
+    { icon: '🛡️', name: 'Carlie', role: 'DEF AIR — Line Holder', tier: 'B', type: 'aircraft', desc: 'Strengthens aircraft formation defensive line. Solid support defender.' },
+    { icon: '🏰', name: 'Lucius', role: 'DEF AIR — Anchor', tier: 'B', type: 'aircraft', desc: 'Solid defensive hero for aircraft teams. Holds frontline while others attack.' },
+    { icon: '⚡', name: 'Maxwell', role: 'ATK AIR — Stunner', tier: 'B', type: 'aircraft', desc: 'High physical damage to single targets with stun. Decent for PvE.' },
+    { icon: '💊', name: 'Ambolt', role: 'SUP AIR — Healer', tier: 'C', type: 'aircraft', desc: 'Minor healing with low output. Underwhelming support, not recommended.' },
+
+    // ===== MISSILE HEROES =====
+    { icon: '🚀', name: 'Tesla', role: 'ATK MSL — Energy DPS', tier: 'S', type: 'missile', desc: 'Energy damage expert. Destroys armored enemies. Core of missile formations.' },
+    { icon: '🎯', name: 'Fiona', role: 'ATK MSL — AoE Nuker', tier: 'S', type: 'missile', desc: 'Versatile multi-target DPS. Strong anti-aircraft nuker. Effective in PvE & PvP.' },
+    { icon: '🏹', name: 'Swift', role: 'ATK MSL — Quick Strike', tier: 'A', type: 'missile', desc: 'Fast-hitting missile attacker. High damage output in rapid succession.' },
+    { icon: '☠️', name: 'Venom', role: 'ATK MSL — Poison DoT', tier: 'A', type: 'missile', desc: 'Poison damage specialist. Upgradeable to UR in Season 5. Great for endurance fights.' },
+    { icon: '🛡️', name: 'McGregor', role: 'DEF MSL — Taunt Tank', tier: 'B', type: 'missile', desc: 'Provides tankiness with taunt. Draws enemy fire to protect missile DPS.' },
+    { icon: '🛡️', name: 'Adam', role: 'DEF MSL — Counterattack', tier: 'B', type: 'missile', desc: 'Balanced offense/defense with counterattack abilities for missile teams.' },
+    { icon: '❄️', name: 'Elsa', role: 'DEF MSL — CC/Slow', tier: 'B', type: 'missile', desc: 'Slows enemies and provides damage reduction. Useful for specific team comps.' },
+    { icon: '💣', name: 'Kane', role: 'ATK MSL — Basic DPS', tier: 'C', type: 'missile', desc: 'Below-average single target damage. No CC or utility. Early game only.' }
 ];
 
 // ===== VS DUEL SCHEDULE DATA =====
@@ -676,19 +694,78 @@ function updateGearContent(t) {
     }
 }
 
-function updateHeroesContent() {
+function updateHeroesContent(filter = 'all') {
     const grid = document.getElementById('heroesGrid');
     if (!grid) return;
 
-    grid.innerHTML = heroData.map(hero => `
-        <div class="hero-card">
+    if (filter === 'all') {
+        // Show category overview cards instead of all heroes
+        const categories = [
+            { type: 'tank', icon: '🛡️', label: 'TANK', color: '#ff6b35' },
+            { type: 'aircraft', icon: '🚁', label: 'AIRCRAFT', color: '#00c9ff' },
+            { type: 'missile', icon: '🚀', label: 'MISSILE', color: '#ff3860' }
+        ];
+
+        grid.innerHTML = categories.map(cat => {
+            const heroes = heroData.filter(h => h.type === cat.type);
+            const sCount = heroes.filter(h => h.tier === 'S').length;
+            const topHeroes = heroes.filter(h => h.tier === 'S').map(h => h.name).join(', ') || heroes.filter(h => h.tier === 'A').map(h => h.name).slice(0, 3).join(', ');
+            return `
+                <div class="hero-category-card glass-panel" data-type="${cat.type}" style="--cat-color: ${cat.color}">
+                    <div class="hero-cat-icon">${cat.icon}</div>
+                    <h3 class="hero-cat-label">${cat.label} HEROES</h3>
+                    <div class="hero-cat-count">${heroes.length} Heroes</div>
+                    <div class="hero-cat-tiers">
+                        <span class="hero-cat-tier tier-s">${sCount} S-Tier</span>
+                    </div>
+                    <div class="hero-cat-top">Top: ${topHeroes}</div>
+                    <div class="hero-cat-cta">TAP TO VIEW ▶</div>
+                </div>
+            `;
+        }).join('');
+
+        // Make category cards clickable
+        grid.querySelectorAll('.hero-category-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const type = card.getAttribute('data-type');
+                // Update tab state
+                document.querySelectorAll('.hero-filter-tab').forEach(t => {
+                    t.classList.toggle('active', t.getAttribute('data-filter') === type);
+                });
+                updateHeroesContent(type);
+            });
+        });
+        return;
+    }
+
+    const filtered = heroData.filter(h => h.type === filter);
+
+    // Sort by tier priority: S > A > B > C
+    const tierOrder = { S: 0, A: 1, B: 2, C: 3 };
+    filtered.sort((a, b) => tierOrder[a.tier] - tierOrder[b.tier]);
+
+    grid.innerHTML = filtered.map(hero => `
+        <div class="hero-card" data-type="${hero.type}">
             <span class="hero-tier-badge tier-${hero.tier.toLowerCase()}">${hero.tier}</span>
+            <span class="hero-type-badge type-${hero.type}">${hero.type === 'tank' ? '🛡️' : hero.type === 'aircraft' ? '🚁' : '🚀'}</span>
             <div class="hero-card-icon">${hero.icon}</div>
             <div class="hero-card-name">${hero.name}</div>
             <div class="hero-card-role">${hero.role}</div>
             <div class="hero-card-desc">${hero.desc}</div>
         </div>
     `).join('');
+}
+
+function initHeroFilter() {
+    const tabs = document.querySelectorAll('.hero-filter-tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const filter = tab.getAttribute('data-filter');
+            updateHeroesContent(filter);
+        });
+    });
 }
 
 function initLanguage() {
@@ -921,6 +998,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initNavScrollSpy();
     initHamburger();
+    initHeroFilter();
 
     // Check for day change every minute
     setInterval(() => {

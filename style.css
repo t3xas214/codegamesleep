@@ -961,6 +961,18 @@ h4 {
   position: relative;
 }
 
+.avatar-img {
+  overflow: hidden;
+  padding: 0;
+}
+
+.avatar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .role {
   color: var(--neon-blue);
   font-size: 1.3rem;
@@ -1403,6 +1415,8 @@ h4 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .hero-card {
@@ -1476,6 +1490,141 @@ h4 {
   padding-top: 0.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   opacity: 0.8;
+}
+
+/* Hero Filter Tabs */
+.hero-filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-filter-tab {
+  background: transparent;
+  border: 1px solid var(--hud-dim);
+  color: var(--hud-dim);
+  padding: 0.6rem 1.2rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.1em;
+}
+
+.hero-filter-tab:hover {
+  border-color: var(--neon-blue);
+  color: var(--neon-blue);
+  background: rgba(0, 243, 255, 0.05);
+}
+
+.hero-filter-tab.active {
+  background: var(--neon-blue);
+  color: var(--bg-dark);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+/* Hero Type Badge */
+.hero-type-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+/* C-tier */
+.tier-c {
+  background: #555;
+}
+
+/* Category Overview Cards (ALL view) */
+.hero-category-card {
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid var(--hud-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--cat-color, var(--neon-blue));
+  transition: height 0.3s;
+}
+
+.hero-category-card:hover {
+  border-color: var(--cat-color, var(--neon-blue));
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero-category-card:hover::before {
+  height: 4px;
+  box-shadow: 0 0 15px var(--cat-color, var(--neon-blue));
+}
+
+.hero-cat-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-cat-label {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  color: var(--hud-text);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-cat-count {
+  font-family: var(--font-sub);
+  font-size: 0.9rem;
+  color: var(--hud-dim);
+  margin-bottom: 0.8rem;
+}
+
+.hero-cat-tiers {
+  margin-bottom: 0.8rem;
+}
+
+.hero-cat-tier {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.hero-cat-top {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.hero-cat-cta {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  color: var(--neon-blue);
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.hero-category-card:hover .hero-cat-cta {
+  opacity: 1;
 }
 
 /* ===== QUICK LINKS ===== */

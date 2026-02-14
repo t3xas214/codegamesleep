@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         element.addEventListener('mouseleave', () => {
             element.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
             element.style.background = 'linear-gradient(135deg, rgba(26, 30, 36, 0.9), rgba(10, 14, 20, 0.95))';
-            element.style.borderColor = 'var(--steel-edge)';
+            element.style.borderColor = 'var(--hud-border)';
         });
     });
 });

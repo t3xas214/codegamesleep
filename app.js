@@ -9,6 +9,7 @@ const translations = {
         // Nav
         navStaff: "STAFF", navRules: "RULES", navGear: "GEAR",
         navHeroes: "HEROES", navSchedule: "SCHEDULE", navTools: "TOOLS",
+        navRewards: "REWARDS", navQuiz: "QUIZ",
 
         // Hero
         tagline: "🔥 BORAAAAA! 🔥",
@@ -187,10 +188,67 @@ const translations = {
             }
         ],
 
-        // Tools
+        // Tools / Countdown
         toolsTitle: "TACTICAL TOOLS",
-        armsRaceTitle: "ARMS RACE COUNTDOWN",
+        armsRaceTitle: "ARMS RACE",
         nextBlock: "NEXT EVENT BLOCK",
+        dailyResetTitle: "DAILY RESET",
+        dailyResetSub: "MIDNIGHT UTC",
+        enemyBusterTitle: "ENEMY BUSTER",
+        enemyBusterSub: "NEXT SATURDAY",
+        generalsTrialTitle: "GENERAL'S TRIAL",
+        generalsTrialSub: "NEXT EVENT",
+
+        // Check-in
+        checkinTitle: "DAILY INTEL DROP",
+        checkinSubtitle: "Check in daily to unlock classified intel",
+        streakLabel: "DAY STREAK",
+        checkinBtn: "📡 CLAIM INTEL",
+        checkinClaimed: "✅ INTEL CLAIMED",
+        intelLabel: "TODAY'S CLASSIFIED INTEL",
+        checkinDays: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
+        checkinIcons: ["📡", "🏗️", "🔬", "🦸", "🎖️", "💀", "🛡️"],
+        checkinIntel: [
+            "Save all radar and expansion items for Monday. Don't use speedups randomly — stack them for event day!",
+            "Upgrade resource buildings FIRST before your HQ. Your alliance help requests go further when buildings cost more.",
+            "Research military tech tree before economy. Combat power matters more than gathering speed in Last War.",
+            "Focus hero XP on ONE hero at a time. Spreading resources across all heroes slows your progress significantly.",
+            "Training day tip: Queue your highest-tier troops right before reset to get double event credit.",
+            "Enemy Buster survival: Always shield before Saturday reset. Teleport to your hive BEFORE the event starts.",
+            "Sunday planning: Review your weekly checklist and coordinate with R4/R5 for the coming week's rally targets."
+        ],
+
+        // Quiz
+        quizTitle: "COMMANDER IQ TEST",
+        quizSubtitle: "Test your Last War knowledge",
+        quizStartTitle: "ARE YOU READY, COMMANDER?",
+        quizStartDesc: "5 random questions about Last War Survival tactics and strategy.",
+        quizStartBtn: "⚔️ BEGIN TEST",
+        quizRestart: "🔄 TRY AGAIN",
+        quizRanks: [
+            { min: 0, rank: "RECRUIT", icon: "🪖", msg: "Back to basic training, soldier! Study the guides and try again." },
+            { min: 2, rank: "SERGEANT", icon: "🎖️", msg: "Not bad! You know the basics but there's room to grow." },
+            { min: 3, rank: "COMMANDER", icon: "⭐", msg: "Solid knowledge! You're a reliable officer in any alliance." },
+            { min: 4, rank: "GENERAL", icon: "🏅", msg: "Impressive tactical expertise! You'd make a great R4." },
+            { min: 5, rank: "SUPREME COMMANDER", icon: "👑", msg: "Perfect score! You are a true Last War strategist!" }
+        ],
+        quizQuestions: [
+            { q: "What should ALWAYS be your #1 upgrade priority?", a: ["HQ Level", "Hero Skills", "Troop Training", "Research"], c: 0 },
+            { q: "What day is Enemy Buster?", a: ["Friday", "Saturday", "Sunday", "Thursday"], c: 1 },
+            { q: "How often does the Arms Race event reset?", a: ["Every 2 hours", "Every 4 hours", "Every 6 hours", "Every 8 hours"], c: 1 },
+            { q: "What should you do FIRST on Enemy Buster day if not fighting?", a: ["Teleport away", "Attack enemies", "Activate 24H Shield", "Train troops"], c: 2 },
+            { q: "Which hero type has Kimberly, Williams, and Murphy?", a: ["Aircraft", "Missile", "Tank", "Support"], c: 2 },
+            { q: "What gear should DPS heroes upgrade first?", a: ["Armor", "Chip", "Radar", "Cannon"], c: 3 },
+            { q: "At what gear level do you get bonus star promotion?", a: ["Level 20", "Level 30", "Level 40", "Level 50"], c: 2 },
+            { q: "What is the game's standard time zone?", a: ["EST", "PST", "UTC", "CET"], c: 2 },
+            { q: "How many heroes should you focus on for your main squad?", a: ["3", "5", "8", "10"], c: 1 },
+            { q: "What should you NEVER do inside the alliance hive zone?", a: ["Build", "Train troops", "Gather resources", "Shield up"], c: 2 },
+            { q: "What rarity comes after Legendary (Gold)?", a: ["Ultra Rare", "Mythic", "Divine", "Ancient"], c: 1 },
+            { q: "What does the Radar gear piece primarily boost?", a: ["Attack", "HP", "Energy Defense", "Physical Defense"], c: 2 },
+            { q: "Which hero is the best Aircraft boss killer?", a: ["Morrison", "DVA", "Cage", "Sarah"], c: 1 },
+            { q: "What should F2P players save speedups for?", a: ["Random use", "Event days only", "Building upgrades", "Research only"], c: 1 },
+            { q: "Which hero is the top S-tier Missile DPS?", a: ["Swift", "Venom", "Tesla", "Kane"], c: 2 }
+        ],
 
         // Links
         linksTitle: "QUICK LINKS",
@@ -202,6 +260,7 @@ const translations = {
     es: {
         navStaff: "EQUIPO", navRules: "REGLAS", navGear: "EQUIPO",
         navHeroes: "HÉROES", navSchedule: "AGENDA", navTools: "HERRAM.",
+        navRewards: "PREMIOS", navQuiz: "QUIZ",
         tagline: "🔥 BORAAAAA! 🔥",
         server: "SERVIDOR",
         systemOnline: "SISTEMA EN LÍNEA",
@@ -338,8 +397,61 @@ const translations = {
             }
         ],
         toolsTitle: "HERRAMIENTAS TÁCTICAS",
-        armsRaceTitle: "CUENTA REGRESIVA",
+        armsRaceTitle: "CARRERA ARMAMENT.",
         nextBlock: "PRÓXIMO BLOQUE",
+        dailyResetTitle: "REINICIO DIARIO",
+        dailyResetSub: "MEDIANOCHE UTC",
+        enemyBusterTitle: "ENEMY BUSTER",
+        enemyBusterSub: "PRÓXIMO SÁBADO",
+        generalsTrialTitle: "PRUEBA GENERAL",
+        generalsTrialSub: "PRÓXIMO EVENTO",
+        checkinTitle: "INTEL DIARIO",
+        checkinSubtitle: "Regresa cada día para desbloquear intel clasificado",
+        streakLabel: "DÍAS SEGUIDOS",
+        checkinBtn: "📡 RECLAMAR INTEL",
+        checkinClaimed: "✅ INTEL RECLAMADO",
+        intelLabel: "INTEL CLASIFICADO DE HOY",
+        checkinDays: ["LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB", "DOM"],
+        checkinIcons: ["📡", "🏗️", "🔬", "🦸", "🎖️", "💀", "🛡️"],
+        checkinIntel: [
+            "Guarda todos los ítems de radar y expansión para el lunes. ¡No uses aceleradores al azar!",
+            "Mejora edificios de recursos ANTES que tu CG. Las ayudas de alianza rinden más con edificios costosos.",
+            "Investiga tecnología militar antes que economía. El poder de combate importa más que la velocidad de recolección.",
+            "Enfoca XP de héroe en UNO a la vez. Repartir recursos entre todos los héroes ralentiza tu progreso.",
+            "Consejo de entrenamiento: Encola tropas de alto nivel justo antes del reinicio para doble crédito.",
+            "Supervivencia Enemy Buster: Siempre activa escudo antes del reinicio del sábado.",
+            "Planificación dominical: Revisa tu lista semanal y coordina con R4/R5 para los rallies de la semana."
+        ],
+        quizTitle: "TEST DE CI COMANDANTE",
+        quizSubtitle: "Pon a prueba tu conocimiento de Last War",
+        quizStartTitle: "¿ESTÁS LISTO, COMANDANTE?",
+        quizStartDesc: "5 preguntas aleatorias sobre tácticas y estrategia de Last War Survival.",
+        quizStartBtn: "⚔️ COMENZAR TEST",
+        quizRestart: "🔄 INTENTAR DE NUEVO",
+        quizRanks: [
+            { min: 0, rank: "RECLUTA", icon: "🪖", msg: "¡De vuelta al entrenamiento básico! Estudia las guías." },
+            { min: 2, rank: "SARGENTO", icon: "🎖️", msg: "¡No está mal! Conoces lo básico pero hay margen de mejora." },
+            { min: 3, rank: "COMANDANTE", icon: "⭐", msg: "¡Buen conocimiento! Serías un oficial confiable." },
+            { min: 4, rank: "GENERAL", icon: "🏅", msg: "¡Impresionante experiencia táctica! Serías un gran R4." },
+            { min: 5, rank: "COMANDANTE SUPREMO", icon: "👑", msg: "¡Puntuación perfecta! Eres un verdadero estratega." }
+        ],
+        quizQuestions: [
+            { q: "¿Cuál debería ser SIEMPRE tu prioridad #1 de mejora?", a: ["Nivel de CG", "Habilidades de héroe", "Entrenamiento de tropas", "Investigación"], c: 0 },
+            { q: "¿Qué día es Enemy Buster?", a: ["Viernes", "Sábado", "Domingo", "Jueves"], c: 1 },
+            { q: "¿Cada cuánto se reinicia la Carrera Armamentista?", a: ["Cada 2 horas", "Cada 4 horas", "Cada 6 horas", "Cada 8 horas"], c: 1 },
+            { q: "¿Qué hacer PRIMERO en Enemy Buster si no peleas?", a: ["Teletransportarte", "Atacar enemigos", "Activar Escudo 24H", "Entrenar tropas"], c: 2 },
+            { q: "¿Qué tipo de héroe son Kimberly, Williams y Murphy?", a: ["Avión", "Misil", "Tanque", "Soporte"], c: 2 },
+            { q: "¿Qué equipo deben mejorar primero los héroes DPS?", a: ["Armadura", "Chip", "Radar", "Cañón"], c: 3 },
+            { q: "¿A qué nivel de equipo obtienes promoción de estrellas?", a: ["Nivel 20", "Nivel 30", "Nivel 40", "Nivel 50"], c: 2 },
+            { q: "¿Cuál es la zona horaria estándar del juego?", a: ["EST", "PST", "UTC", "CET"], c: 2 },
+            { q: "¿En cuántos héroes debes enfocarte para tu escuadrón?", a: ["3", "5", "8", "10"], c: 1 },
+            { q: "¿Qué NUNCA debes hacer dentro de la zona de la colmena?", a: ["Construir", "Entrenar tropas", "Recolectar recursos", "Activar escudo"], c: 2 },
+            { q: "¿Qué rareza viene después de Legendario (Dorado)?", a: ["Ultra Raro", "Mítico", "Divino", "Antiguo"], c: 1 },
+            { q: "¿Qué mejora principalmente el Radar?", a: ["Ataque", "HP", "Def. de Energía", "Def. Física"], c: 2 },
+            { q: "¿Cuál es el mejor héroe aéreo mata-jefes?", a: ["Morrison", "DVA", "Cage", "Sarah"], c: 1 },
+            { q: "¿Para qué deben ahorrar aceleradores los F2P?", a: ["Uso aleatorio", "Solo días de evento", "Solo construcciones", "Solo investigación"], c: 1 },
+            { q: "¿Cuál es el mejor héroe S-tier de misiles DPS?", a: ["Swift", "Venom", "Tesla", "Kane"], c: 2 }
+        ],
         linksTitle: "ENLACES RÁPIDOS",
         linkGuides: "Guías",
         footerVersion: "Hub de Alianza v3.0"
@@ -347,6 +459,7 @@ const translations = {
     pt: {
         navStaff: "EQUIPE", navRules: "REGRAS", navGear: "EQUIP.",
         navHeroes: "HERÓIS", navSchedule: "AGENDA", navTools: "FERRAM.",
+        navRewards: "PRÊMIOS", navQuiz: "QUIZ",
         tagline: "🔥 BORAAAAA! 🔥",
         server: "SERVIDOR",
         systemOnline: "SISTEMA ONLINE",
@@ -483,8 +596,61 @@ const translations = {
             }
         ],
         toolsTitle: "FERRAMENTAS TÁTICAS",
-        armsRaceTitle: "CONTAGEM REGRESSIVA",
+        armsRaceTitle: "CORRIDA ARMAM.",
         nextBlock: "PRÓXIMO BLOCO",
+        dailyResetTitle: "RESET DIÁRIO",
+        dailyResetSub: "MEIA-NOITE UTC",
+        enemyBusterTitle: "ENEMY BUSTER",
+        enemyBusterSub: "PRÓXIMO SÁBADO",
+        generalsTrialTitle: "PROVA DO GENERAL",
+        generalsTrialSub: "PRÓXIMO EVENTO",
+        checkinTitle: "INTEL DIÁRIO",
+        checkinSubtitle: "Volte diariamente para desbloquear intel classificado",
+        streakLabel: "DIAS SEGUIDOS",
+        checkinBtn: "📡 RESGATAR INTEL",
+        checkinClaimed: "✅ INTEL RESGATADO",
+        intelLabel: "INTEL CLASSIFICADO DE HOJE",
+        checkinDays: ["SEG", "TER", "QUA", "QUI", "SEX", "SÁB", "DOM"],
+        checkinIcons: ["📡", "🏗️", "🔬", "🦸", "🎖️", "💀", "🛡️"],
+        checkinIntel: [
+            "Guarde todos os itens de radar e expansão para a segunda. Não use aceleradores aleatoriamente!",
+            "Melhore edifícios de recursos ANTES do QG. As ajudas da aliança rendem mais com edifícios caros.",
+            "Pesquise tecnologia militar antes da economia. Poder de combate importa mais que velocidade de coleta.",
+            "Foque XP de herói em UM por vez. Espalhar recursos entre todos os heróis atrasa seu progresso.",
+            "Dica de treino: Coloque tropas de alto nível na fila antes do reset para crédito duplo.",
+            "Sobrevivência Enemy Buster: Sempre ative escudo antes do reset de sábado.",
+            "Planejamento de domingo: Revise sua lista semanal e coordene com R4/R5 os alvos de rally."
+        ],
+        quizTitle: "TESTE DE QI COMANDANTE",
+        quizSubtitle: "Teste seu conhecimento de Last War",
+        quizStartTitle: "ESTÁ PRONTO, COMANDANTE?",
+        quizStartDesc: "5 perguntas aleatórias sobre táticas e estratégia de Last War Survival.",
+        quizStartBtn: "⚔️ INICIAR TESTE",
+        quizRestart: "🔄 TENTAR DE NOVO",
+        quizRanks: [
+            { min: 0, rank: "RECRUTA", icon: "🪖", msg: "De volta ao treinamento básico! Estude os guias." },
+            { min: 2, rank: "SARGENTO", icon: "🎖️", msg: "Nada mal! Você sabe o básico mas pode melhorar." },
+            { min: 3, rank: "COMANDANTE", icon: "⭐", msg: "Bom conhecimento! Você seria um oficial confiável." },
+            { min: 4, rank: "GENERAL", icon: "🏅", msg: "Impressionante! Você seria um ótimo R4." },
+            { min: 5, rank: "COMANDANTE SUPREMO", icon: "👑", msg: "Pontuação perfeita! Você é um verdadeiro estrategista!" }
+        ],
+        quizQuestions: [
+            { q: "Qual deveria ser SEMPRE sua prioridade #1 de melhoria?", a: ["Nível do QG", "Habilidades de herói", "Treino de tropas", "Pesquisa"], c: 0 },
+            { q: "Que dia é o Enemy Buster?", a: ["Sexta", "Sábado", "Domingo", "Quinta"], c: 1 },
+            { q: "Com que frequência a Corrida Armamentista reinicia?", a: ["A cada 2 horas", "A cada 4 horas", "A cada 6 horas", "A cada 8 horas"], c: 1 },
+            { q: "O que fazer PRIMEIRO no Enemy Buster se não for lutar?", a: ["Teletransportar", "Atacar inimigos", "Ativar Escudo 24H", "Treinar tropas"], c: 2 },
+            { q: "Que tipo de herói são Kimberly, Williams e Murphy?", a: ["Aeronave", "Míssil", "Tanque", "Suporte"], c: 2 },
+            { q: "Que equipamento heróis DPS devem melhorar primeiro?", a: ["Armadura", "Chip", "Radar", "Canhão"], c: 3 },
+            { q: "Em que nível de equipamento você ganha promoção de estrela?", a: ["Nível 20", "Nível 30", "Nível 40", "Nível 50"], c: 2 },
+            { q: "Qual é o fuso horário padrão do jogo?", a: ["EST", "PST", "UTC", "CET"], c: 2 },
+            { q: "Em quantos heróis você deve focar para seu esquadrão?", a: ["3", "5", "8", "10"], c: 1 },
+            { q: "O que NUNCA deve fazer dentro da zona da colmeia?", a: ["Construir", "Treinar tropas", "Coletar recursos", "Ativar escudo"], c: 2 },
+            { q: "Que raridade vem depois de Lendário (Dourado)?", a: ["Ultra Raro", "Mítico", "Divino", "Antigo"], c: 1 },
+            { q: "O que o Radar melhora principalmente?", a: ["Ataque", "HP", "Defesa de Energia", "Defesa Física"], c: 2 },
+            { q: "Qual é o melhor herói aéreo mata-chefes?", a: ["Morrison", "DVA", "Cage", "Sarah"], c: 1 },
+            { q: "Para que devem F2P guardar aceleradores?", a: ["Uso aleatório", "Só dias de evento", "Só construções", "Só pesquisa"], c: 1 },
+            { q: "Qual é o melhor herói S-tier de mísseis DPS?", a: ["Swift", "Venom", "Tesla", "Kane"], c: 2 }
+        ],
         linksTitle: "LINKS RÁPIDOS",
         linkGuides: "Guias",
         footerVersion: "Hub da Aliança v3.0"
@@ -603,30 +769,105 @@ function updateClock() {
     }
 }
 
-function updateArmsRaceTimer() {
-    const timerElement = document.getElementById('armsRaceTimer');
-    const timerContainer = document.querySelector('.arms-race-timer');
-    const progressFill = document.getElementById('timerProgressFill');
+function updateAllCountdowns() {
+    const now = new Date();
 
-    if (timerElement) {
+    // --- Arms Race (4-hour blocks) ---
+    const armsRaceTimer = document.getElementById('armsRaceTimer');
+    const armsRaceCard = document.getElementById('armsRaceCard');
+    const armsRaceProgress = document.getElementById('armsRaceProgress');
+    if (armsRaceTimer) {
         const { hours, minutes, seconds, progress, totalMinutesRemaining } = getTimeUntilNextArmsRace();
-        timerElement.textContent = formatCountdown(hours, minutes, seconds);
-
-        // Update progress bar
-        if (progressFill) {
-            progressFill.style.width = `${progress}%`;
+        armsRaceTimer.textContent = formatCountdown(hours, minutes, seconds);
+        if (armsRaceProgress) armsRaceProgress.style.width = `${progress}%`;
+        if (armsRaceCard) {
+            armsRaceCard.classList.remove('urgency-high', 'urgency-mid', 'urgency-low');
+            if (totalMinutesRemaining <= 30) armsRaceCard.classList.add('urgency-high');
+            else if (totalMinutesRemaining <= 120) armsRaceCard.classList.add('urgency-mid');
+            else armsRaceCard.classList.add('urgency-low');
         }
+    }
 
-        // Update urgency class
-        if (timerContainer) {
-            timerContainer.classList.remove('urgency-high', 'urgency-mid', 'urgency-low');
-            if (totalMinutesRemaining <= 30) {
-                timerContainer.classList.add('urgency-high');
-            } else if (totalMinutesRemaining <= 120) {
-                timerContainer.classList.add('urgency-mid');
-            } else {
-                timerContainer.classList.add('urgency-low');
-            }
+    // --- Daily Reset (midnight UTC) ---
+    const dailyResetTimer = document.getElementById('dailyResetTimer');
+    const dailyResetCard = document.getElementById('dailyResetCard');
+    const dailyResetProgress = document.getElementById('dailyResetProgress');
+    if (dailyResetTimer) {
+        const h = 23 - now.getUTCHours();
+        const m = 59 - now.getUTCMinutes();
+        const s = 59 - now.getUTCSeconds();
+        const totalMins = h * 60 + m;
+        const progressPct = ((24 * 60 - totalMins) / (24 * 60)) * 100;
+        dailyResetTimer.textContent = formatCountdown(h, m, s);
+        if (dailyResetProgress) dailyResetProgress.style.width = `${progressPct}%`;
+        if (dailyResetCard) {
+            dailyResetCard.classList.remove('urgency-high', 'urgency-mid', 'urgency-low');
+            if (totalMins <= 60) dailyResetCard.classList.add('urgency-high');
+            else if (totalMins <= 360) dailyResetCard.classList.add('urgency-mid');
+            else dailyResetCard.classList.add('urgency-low');
+        }
+    }
+
+    // --- Enemy Buster (next Saturday 00:00 UTC) ---
+    const enemyBusterTimer = document.getElementById('enemyBusterTimer');
+    const enemyBusterCard = document.getElementById('enemyBusterCard');
+    const enemyBusterProgress = document.getElementById('enemyBusterProgress');
+    if (enemyBusterTimer) {
+        const utcDay = now.getUTCDay(); // 0=Sun, 6=Sat
+        let daysUntilSat = (6 - utcDay + 7) % 7;
+        if (daysUntilSat === 0 && (now.getUTCHours() > 0 || now.getUTCMinutes() > 0)) {
+            // It's already Saturday and past midnight, show time until next Saturday
+            daysUntilSat = 7;
+        }
+        const targetSat = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + daysUntilSat, 0, 0, 0));
+        const diff = targetSat - now;
+        const ebH = Math.floor(diff / 3600000);
+        const ebM = Math.floor((diff % 3600000) / 60000);
+        const ebS = Math.floor((diff % 60000) / 1000);
+        const weekProgress = ((7 * 24 * 3600000 - diff) / (7 * 24 * 3600000)) * 100;
+        enemyBusterTimer.textContent = ebH > 24
+            ? `${Math.floor(ebH / 24)}d ${ebH % 24}h`
+            : formatCountdown(ebH, ebM, ebS);
+        if (enemyBusterProgress) enemyBusterProgress.style.width = `${weekProgress}%`;
+        if (enemyBusterCard) {
+            enemyBusterCard.classList.remove('urgency-high', 'urgency-mid', 'urgency-low');
+            if (ebH <= 4) enemyBusterCard.classList.add('urgency-high');
+            else if (ebH <= 24) enemyBusterCard.classList.add('urgency-mid');
+            else enemyBusterCard.classList.add('urgency-low');
+        }
+    }
+
+    // --- General's Trial (every Wednesday and Saturday) ---
+    const generalsTrialTimer = document.getElementById('generalsTrialTimer');
+    const generalsTrialCard = document.getElementById('generalsTrialCard');
+    const generalsTrialProgress = document.getElementById('generalsTrialProgress');
+    if (generalsTrialTimer) {
+        const utcDay = now.getUTCDay();
+        // Next Wednesday (3) or Saturday (6)
+        const targets = [3, 6]; // Wed, Sat
+        let minDays = 8;
+        for (const td of targets) {
+            let d = (td - utcDay + 7) % 7;
+            if (d === 0 && (now.getUTCHours() > 0 || now.getUTCMinutes() > 0)) d = 7;
+            if (d === 0) d = 0; // It's exactly the start
+            if (d < minDays) minDays = d;
+        }
+        const targetDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + minDays, 0, 0, 0));
+        const diff = targetDate - now;
+        const gtH = Math.floor(diff / 3600000);
+        const gtM = Math.floor((diff % 3600000) / 60000);
+        const gtS = Math.floor((diff % 60000) / 1000);
+        const maxDiff = 3.5 * 24 * 3600000; // max ~3.5 days
+        const gtProgress = ((maxDiff - Math.min(diff, maxDiff)) / maxDiff) * 100;
+        generalsTrialTimer.textContent = gtH > 24
+            ? `${Math.floor(gtH / 24)}d ${gtH % 24}h`
+            : formatCountdown(gtH, gtM, gtS);
+        if (generalsTrialProgress) generalsTrialProgress.style.width = `${gtProgress}%`;
+        if (generalsTrialCard) {
+            generalsTrialCard.classList.remove('urgency-high', 'urgency-mid', 'urgency-low');
+            if (gtH <= 4) generalsTrialCard.classList.add('urgency-high');
+            else if (gtH <= 24) generalsTrialCard.classList.add('urgency-mid');
+            else generalsTrialCard.classList.add('urgency-low');
         }
     }
 }
@@ -977,15 +1218,208 @@ function initHamburger() {
 }
 
 // ===== INITIALIZATION =====
+// ===== DAILY CHECK-IN STREAK SYSTEM =====
+function getUTCDateString() {
+    const now = new Date();
+    return `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, '0')}-${String(now.getUTCDate()).padStart(2, '0')}`;
+}
+
+function initCheckIn() {
+    const t = translations[currentLang];
+    const today = getUTCDateString();
+    const todayDow = getCurrentDayOfWeek(); // 0=Mon...6=Sun
+
+    // Load saved data
+    let saved = JSON.parse(localStorage.getItem('dstm_checkin') || '{}');
+    if (!saved.streak) saved = { streak: 0, lastDate: null, claimedDays: [] };
+
+    // Calculate streak
+    if (saved.lastDate) {
+        const last = new Date(saved.lastDate + 'T00:00:00Z');
+        const todayDate = new Date(today + 'T00:00:00Z');
+        const diffDays = Math.floor((todayDate - last) / 86400000);
+        if (diffDays > 1) {
+            // Streak broken
+            saved.streak = 0;
+            saved.claimedDays = [];
+        }
+    }
+
+    const alreadyClaimed = saved.lastDate === today;
+
+    // Update streak count
+    document.getElementById('streakCount').textContent = saved.streak;
+
+    // Update button state
+    const btn = document.getElementById('checkinBtn');
+    if (alreadyClaimed) {
+        btn.textContent = t.checkinClaimed;
+        btn.classList.add('claimed');
+    } else {
+        btn.textContent = t.checkinBtn;
+        btn.classList.remove('claimed');
+    }
+
+    // Render 7-day grid
+    const grid = document.getElementById('checkinGrid');
+    grid.innerHTML = '';
+    for (let i = 0; i < 7; i++) {
+        const isClaimed = saved.claimedDays.includes(i);
+        const isToday = i === todayDow;
+        const card = document.createElement('div');
+        card.className = `checkin-day${isClaimed ? ' claimed' : ''}${isToday ? ' today' : ''}`;
+        card.innerHTML = `
+            <div class="checkin-day-label">${t.checkinDays[i]}</div>
+            <div class="checkin-day-icon">${t.checkinIcons[i]}</div>
+            <div class="checkin-day-status">${isClaimed ? '✅' : isToday ? '📡' : '🔒'}</div>
+        `;
+        grid.appendChild(card);
+    }
+
+    // Show intel if claimed today
+    const intelDiv = document.getElementById('checkinIntel');
+    if (alreadyClaimed) {
+        intelDiv.style.display = 'block';
+        document.getElementById('intelText').textContent = t.checkinIntel[todayDow];
+    } else {
+        intelDiv.style.display = 'none';
+    }
+
+    // Claim button handler
+    btn.onclick = () => {
+        if (alreadyClaimed) return;
+        saved.streak += 1;
+        saved.lastDate = today;
+        if (!saved.claimedDays.includes(todayDow)) {
+            saved.claimedDays.push(todayDow);
+        }
+        // Reset weekly claimedDays if streak just started
+        if (saved.streak === 1) {
+            saved.claimedDays = [todayDow];
+        }
+        localStorage.setItem('dstm_checkin', JSON.stringify(saved));
+
+        // Animate
+        btn.textContent = t.checkinClaimed;
+        btn.classList.add('claimed');
+        document.getElementById('streakCount').textContent = saved.streak;
+
+        // Show intel with animation
+        intelDiv.style.display = 'block';
+        document.getElementById('intelText').textContent = t.checkinIntel[todayDow];
+
+        // Refresh grid
+        initCheckIn();
+    };
+}
+
+// ===== COMMANDER QUIZ SYSTEM =====
+let quizState = { questions: [], current: 0, score: 0, total: 5 };
+
+function shuffleArray(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+function initQuiz() {
+    document.getElementById('quizStartBtn').addEventListener('click', startQuiz);
+    document.getElementById('quizRestartBtn').addEventListener('click', startQuiz);
+}
+
+function startQuiz() {
+    const t = translations[currentLang];
+    quizState.questions = shuffleArray(t.quizQuestions).slice(0, quizState.total);
+    quizState.current = 0;
+    quizState.score = 0;
+
+    document.getElementById('quizStart').style.display = 'none';
+    document.getElementById('quizResult').style.display = 'none';
+    document.getElementById('quizPlay').style.display = 'block';
+    showQuestion();
+}
+
+function showQuestion() {
+    const t = translations[currentLang];
+    const q = quizState.questions[quizState.current];
+    const num = quizState.current + 1;
+
+    document.getElementById('quizQuestionNum').textContent = `${num} / ${quizState.total}`;
+    document.getElementById('quizProgressFill').style.width = `${(num - 1) / quizState.total * 100}%`;
+    document.getElementById('quizQuestion').textContent = q.q;
+
+    // Shuffle answer order but track correct index
+    const answerIndices = shuffleArray([0, 1, 2, 3]);
+    const answersDiv = document.getElementById('quizAnswers');
+    answersDiv.innerHTML = '';
+
+    answerIndices.forEach(idx => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-answer-btn';
+        btn.textContent = q.a[idx];
+        btn.addEventListener('click', () => handleAnswer(btn, idx === q.c, answersDiv));
+        answersDiv.appendChild(btn);
+    });
+}
+
+function handleAnswer(clickedBtn, isCorrect, container) {
+    // Disable all buttons
+    container.querySelectorAll('.quiz-answer-btn').forEach(b => b.classList.add('disabled'));
+
+    if (isCorrect) {
+        clickedBtn.classList.add('correct');
+        quizState.score++;
+    } else {
+        clickedBtn.classList.add('wrong');
+        // Highlight the correct answer
+        const q = quizState.questions[quizState.current];
+        container.querySelectorAll('.quiz-answer-btn').forEach(b => {
+            if (b.textContent === q.a[q.c]) b.classList.add('correct');
+        });
+    }
+
+    // Advance after delay
+    setTimeout(() => {
+        quizState.current++;
+        if (quizState.current < quizState.total) {
+            showQuestion();
+        } else {
+            showQuizResult();
+        }
+    }, 1200);
+}
+
+function showQuizResult() {
+    const t = translations[currentLang];
+    document.getElementById('quizPlay').style.display = 'none';
+    document.getElementById('quizResult').style.display = 'block';
+    document.getElementById('quizProgressFill').style.width = '100%';
+
+    document.getElementById('quizResultScore').textContent = `${quizState.score} / ${quizState.total}`;
+
+    // Determine rank
+    let rank = t.quizRanks[0];
+    for (const r of t.quizRanks) {
+        if (quizState.score >= r.min) rank = r;
+    }
+    document.getElementById('quizResultIcon').textContent = rank.icon;
+    document.getElementById('quizResultRank').textContent = rank.rank;
+    document.getElementById('quizResultMsg').textContent = rank.msg;
+}
+
+// ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', () => {
     // Particles
     initParticles();
 
-    // Time & Timer
+    // Time & Countdowns
     updateClock();
     setInterval(updateClock, 1000);
-    updateArmsRaceTimer();
-    setInterval(updateArmsRaceTimer, 1000);
+    updateAllCountdowns();
+    setInterval(updateAllCountdowns, 1000);
 
     // Schedule & Tips
     initDayTabs();
@@ -993,6 +1427,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Localization (must be called last to set initial state)
     initLanguage();
+
+    // Engagement Features
+    initCheckIn();
+    initQuiz();
 
     // Scroll Effects
     initScrollReveal();
@@ -1008,5 +1446,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 60000);
 
-    console.log('🎮 DRAGON STORM SYSTEM v3.0 ONLINE');
+    console.log('🎮 DRAGON STORM SYSTEM v4.0 ONLINE');
 });

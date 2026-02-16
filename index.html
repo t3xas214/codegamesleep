@@ -57,12 +57,14 @@
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">DSTM</a>
       <div class="nav-links">
+        <a href="#checkin" class="nav-link" data-i18n="navRewards">REWARDS</a>
         <a href="#staff" class="nav-link" data-i18n="navStaff">STAFF</a>
         <a href="#rules" class="nav-link" data-i18n="navRules">RULES</a>
         <a href="#gear" class="nav-link" data-i18n="navGear">GEAR</a>
         <a href="#heroes" class="nav-link" data-i18n="navHeroes">HEROES</a>
         <a href="#schedule" class="nav-link" data-i18n="navSchedule">SCHEDULE</a>
         <a href="#tools" class="nav-link" data-i18n="navTools">TOOLS</a>
+        <a href="#quiz" class="nav-link" data-i18n="navQuiz">QUIZ</a>
       </div>
       <!-- Language Switcher (moved to nav) -->
       <div class="lang-switcher">
@@ -134,6 +136,33 @@
             coordinate with your R4/R5. Shield up during Enemy Buster if you can't be active!</p>
         </div>
         <div class="motd-pulse"></div>
+      </div>
+    </section>
+
+    <!-- ===== DAILY CHECK-IN STREAK ===== -->
+    <section class="checkin-section reveal" id="checkin">
+      <h2 class="section-title" data-i18n="checkinTitle">DAILY INTEL DROP</h2>
+      <p class="section-subtitle" data-i18n="checkinSubtitle">Check in daily to unlock classified intel</p>
+
+      <div class="checkin-streak-display glass-panel">
+        <div class="streak-fire">🔥</div>
+        <div class="streak-info">
+          <span class="streak-count" id="streakCount">0</span>
+          <span class="streak-label" data-i18n="streakLabel">DAY STREAK</span>
+        </div>
+        <button class="checkin-btn" id="checkinBtn" data-i18n="checkinBtn">📡 CLAIM INTEL</button>
+      </div>
+
+      <div class="checkin-grid" id="checkinGrid">
+        <!-- JS populated: 7 day cards -->
+      </div>
+
+      <div class="checkin-intel glass-panel" id="checkinIntel" style="display:none;">
+        <div class="intel-header">
+          <span class="intel-icon">🎖️</span>
+          <span class="intel-label" data-i18n="intelLabel">TODAY'S CLASSIFIED INTEL</span>
+        </div>
+        <p class="intel-text" id="intelText"></p>
       </div>
     </section>
 
@@ -413,16 +442,92 @@
       </div>
     </section>
 
-    <!-- ===== TACTICAL TOOLS ===== -->
+    <!-- ===== TACTICAL TOOLS / MULTI-EVENT COUNTDOWN ===== -->
     <section class="tools-section reveal" id="tools">
       <h2 class="section-title" data-i18n="toolsTitle">TACTICAL TOOLS</h2>
-      <div class="arms-race-timer glass-panel" data-tilt>
-        <div class="timer-header" data-i18n="armsRaceTitle">ARMS RACE COUNTDOWN</div>
-        <div class="countdown-display" id="armsRaceTimer">00:00:00</div>
-        <p class="timer-info" data-i18n="nextBlock">NEXT EVENT BLOCK</p>
-        <div class="timer-icon">⚔️</div>
-        <div class="timer-progress-bar">
-          <div class="timer-progress-fill" id="timerProgressFill"></div>
+      <div class="countdown-grid">
+
+        <!-- Arms Race -->
+        <div class="countdown-card glass-panel" id="armsRaceCard">
+          <div class="cd-icon">⚔️</div>
+          <div class="cd-label" data-i18n="armsRaceTitle">ARMS RACE</div>
+          <div class="cd-timer" id="armsRaceTimer">00:00:00</div>
+          <div class="cd-sublabel" data-i18n="nextBlock">NEXT EVENT BLOCK</div>
+          <div class="cd-progress">
+            <div class="cd-progress-fill" id="armsRaceProgress"></div>
+          </div>
+        </div>
+
+        <!-- Daily Reset -->
+        <div class="countdown-card glass-panel" id="dailyResetCard">
+          <div class="cd-icon">🔄</div>
+          <div class="cd-label" data-i18n="dailyResetTitle">DAILY RESET</div>
+          <div class="cd-timer" id="dailyResetTimer">00:00:00</div>
+          <div class="cd-sublabel" data-i18n="dailyResetSub">MIDNIGHT UTC</div>
+          <div class="cd-progress">
+            <div class="cd-progress-fill" id="dailyResetProgress"></div>
+          </div>
+        </div>
+
+        <!-- Enemy Buster -->
+        <div class="countdown-card glass-panel" id="enemyBusterCard">
+          <div class="cd-icon">💀</div>
+          <div class="cd-label" data-i18n="enemyBusterTitle">ENEMY BUSTER</div>
+          <div class="cd-timer" id="enemyBusterTimer">00:00:00</div>
+          <div class="cd-sublabel" data-i18n="enemyBusterSub">NEXT SATURDAY</div>
+          <div class="cd-progress">
+            <div class="cd-progress-fill" id="enemyBusterProgress"></div>
+          </div>
+        </div>
+
+        <!-- General's Trial -->
+        <div class="countdown-card glass-panel" id="generalsTrialCard">
+          <div class="cd-icon">🏆</div>
+          <div class="cd-label" data-i18n="generalsTrialTitle">GENERAL'S TRIAL</div>
+          <div class="cd-timer" id="generalsTrialTimer">00:00:00</div>
+          <div class="cd-sublabel" data-i18n="generalsTrialSub">NEXT EVENT</div>
+          <div class="cd-progress">
+            <div class="cd-progress-fill" id="generalsTrialProgress"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== COMMANDER QUIZ ===== -->
+    <section class="quiz-section reveal" id="quiz">
+      <h2 class="section-title" data-i18n="quizTitle">COMMANDER IQ TEST</h2>
+      <p class="section-subtitle" data-i18n="quizSubtitle">Test your Last War knowledge</p>
+
+      <div class="quiz-container glass-panel" id="quizContainer">
+        <!-- Start Screen -->
+        <div class="quiz-start" id="quizStart">
+          <div class="quiz-start-icon">🧠</div>
+          <h3 class="quiz-start-title" data-i18n="quizStartTitle">ARE YOU READY, COMMANDER?</h3>
+          <p class="quiz-start-desc" data-i18n="quizStartDesc">5 random questions about Last War Survival tactics and
+            strategy.</p>
+          <button class="quiz-start-btn" id="quizStartBtn" data-i18n="quizStartBtn">⚔️ BEGIN TEST</button>
+        </div>
+
+        <!-- Question Screen -->
+        <div class="quiz-play" id="quizPlay" style="display:none;">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quizProgressFill"></div>
+          </div>
+          <div class="quiz-question-num" id="quizQuestionNum">1 / 5</div>
+          <div class="quiz-question" id="quizQuestion"></div>
+          <div class="quiz-answers" id="quizAnswers">
+            <!-- JS populated -->
+          </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div class="quiz-result" id="quizResult" style="display:none;">
+          <div class="quiz-result-icon" id="quizResultIcon">🎖️</div>
+          <div class="quiz-result-rank" id="quizResultRank">COMMANDER</div>
+          <div class="quiz-result-score" id="quizResultScore">5 / 5</div>
+          <p class="quiz-result-msg" id="quizResultMsg"></p>
+          <button class="quiz-restart-btn" id="quizRestartBtn" data-i18n="quizRestart">🔄 TRY AGAIN</button>
         </div>
       </div>
     </section>

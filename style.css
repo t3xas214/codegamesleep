@@ -2661,3 +2661,612 @@ h4 {
     font-size: 0.6rem;
   }
 }
+
+/* =============================================
+   SQUAD BUILDING POSTER (by Sydabeast)
+   All styles scoped under .squad-poster
+   ============================================= */
+.squad-guide-section {
+  margin-bottom: 4rem;
+}
+
+.squad-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.squad-poster .poster {
+  width: 420px;
+  min-height: 620px;
+  background: linear-gradient(160deg, #0a0a1a 0%, #0d1b3e 40%, #0a2a2a 70%, #0d0a2a 100%);
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+  padding: 36px 32px 44px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 0 1.5px rgba(0, 242, 254, 0.4), 0 0 40px rgba(0, 242, 254, 0.15), inset 0 1px 0 rgba(0, 242, 254, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Blobs */
+.squad-poster .blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.28;
+  animation: sp-drift 7s ease-in-out infinite alternate;
+}
+
+.squad-poster .blob-1 {
+  width: 300px;
+  height: 300px;
+  background: #00f2fe;
+  top: -100px;
+  left: -80px;
+  animation-delay: 0s;
+}
+
+.squad-poster .blob-2 {
+  width: 240px;
+  height: 240px;
+  background: #7b2fff;
+  bottom: -80px;
+  right: -60px;
+  animation-delay: 2s;
+}
+
+.squad-poster .blob-3 {
+  width: 160px;
+  height: 160px;
+  background: #00ffcc;
+  top: 38%;
+  left: 55%;
+  animation-delay: 1s;
+}
+
+@keyframes sp-drift {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(20px, 15px) scale(1.08);
+  }
+}
+
+/* Grid lines overlay */
+.squad-poster .poster::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 242, 254, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 254, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  border-radius: 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scanline overlay */
+.squad-poster .poster::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.08) 3px,
+      rgba(0, 0, 0, 0.08) 4px);
+  border-radius: 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Sparkles */
+.squad-poster .sparkle {
+  position: absolute;
+  border-radius: 50%;
+  background: #00f2fe;
+  opacity: 0;
+  animation: sp-sparkle-pop 3s ease-in-out infinite;
+  box-shadow: 0 0 6px #00f2fe;
+}
+
+.squad-poster .sparkle:nth-child(4) {
+  width: 5px;
+  height: 5px;
+  top: 12%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.squad-poster .sparkle:nth-child(5) {
+  width: 4px;
+  height: 4px;
+  top: 8%;
+  left: 75%;
+  animation-delay: 0.7s;
+  background: #a855f7;
+  box-shadow: 0 0 6px #a855f7;
+}
+
+.squad-poster .sparkle:nth-child(6) {
+  width: 3px;
+  height: 3px;
+  top: 30%;
+  left: 88%;
+  animation-delay: 1.3s;
+}
+
+.squad-poster .sparkle:nth-child(7) {
+  width: 12px;
+  height: 12px;
+  top: 65%;
+  left: 6%;
+  animation-delay: 0.4s;
+}
+
+.squad-poster .sparkle:nth-child(8) {
+  width: 9px;
+  height: 9px;
+  top: 80%;
+  left: 80%;
+  animation-delay: 1.8s;
+}
+
+.squad-poster .sparkle:nth-child(9) {
+  width: 7px;
+  height: 7px;
+  top: 50%;
+  left: 50%;
+  animation-delay: 2.2s;
+}
+
+@keyframes sp-sparkle-pop {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4) rotate(20deg);
+  }
+}
+
+/* Tag / Title Card */
+.squad-poster .tag .tag-highlight {
+  color: #00f2fe;
+  text-shadow: 0 0 18px rgba(0, 242, 254, 1), 0 0 36px rgba(0, 242, 254, 0.5);
+}
+
+.squad-poster .tag {
+  background: rgba(0, 20, 40, 0.6);
+  border: 2px solid rgba(0, 242, 254, 0.5);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-family: 'Boogaloo', cursive;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.1;
+  padding: 14px 24px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 0 20px rgba(0, 242, 254, 0.2), inset 0 1px 0 rgba(0, 242, 254, 0.15);
+  text-shadow: 0 0 20px rgba(0, 242, 254, 0.8), 0 0 40px rgba(0, 242, 254, 0.4), 2px 2px 0 rgba(0, 100, 150, 0.8);
+  animation: sp-pop-in 0.6s cubic-bezier(.34, 1.56, .64, 1) both;
+}
+
+.squad-poster .tag .tag-sub {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: none;
+  margin-top: 4px;
+}
+
+/* Squad Grid */
+.squad-poster .squad-grid {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: sp-pop-in 0.6s cubic-bezier(.34, 1.56, .64, 1) 0.15s both;
+}
+
+.squad-poster .squad-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.squad-poster .icon-card {
+  width: 78px;
+  height: 88px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+  font-size: 34px;
+}
+
+.squad-poster .icon-card .label {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.squad-poster .squad-row.back .icon-card {
+  width: 70px;
+  height: 78px;
+  font-size: 18px;
+  opacity: 0.82;
+}
+
+.squad-poster .squad-row.back .icon-card .label {
+  font-size: 7px;
+  letter-spacing: 0.5px;
+}
+
+.squad-poster .icon-card:hover {
+  transform: translateY(-8px) scale(1.1) !important;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.25) !important;
+  opacity: 1 !important;
+}
+
+/* Combo Cards (DPS/Support) */
+.squad-poster .combo-card {
+  width: 82px !important;
+  height: 92px !important;
+  background: linear-gradient(160deg, rgba(255, 120, 20, 0.32), rgba(100, 15, 0, 0.78)) !important;
+  border: 2px solid #fb923c !important;
+  box-shadow: 0 0 22px rgba(251, 146, 60, 0.65), 0 0 44px rgba(255, 100, 0, 0.2), 0 10px 28px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 220, 100, 0.35) !important;
+  opacity: 1 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.squad-poster .combo-card:hover {
+  box-shadow: 0 0 40px rgba(251, 146, 60, 0.95), 0 0 70px rgba(255, 100, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+.squad-poster .combo-card .label {
+  color: #fed7aa !important;
+  text-shadow: 0 0 8px rgba(251, 146, 60, 0.9) !important;
+  font-size: 7px !important;
+}
+
+.squad-poster .combo-card::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 22px;
+  border: 1.5px solid rgba(251, 146, 60, 0.4);
+  animation: sp-ring-pulse 2s ease-in-out infinite;
+}
+
+/* Shield Cards (Defense) */
+.squad-poster .shield-card {
+  width: 96px !important;
+  height: 108px !important;
+  background: linear-gradient(160deg, rgba(6, 182, 212, 0.28), rgba(7, 28, 72, 0.78)) !important;
+  border: 2px solid #22d3ee !important;
+  box-shadow: 0 0 22px rgba(34, 211, 238, 0.6), 0 0 44px rgba(34, 211, 238, 0.2), 0 10px 28px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(125, 211, 252, 0.4) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.squad-poster .shield-card:hover {
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.95), 0 0 70px rgba(34, 211, 238, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+.squad-poster .shield-card .label {
+  color: #a5f3fc !important;
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.9) !important;
+}
+
+.squad-poster .shield-card::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 22px;
+  border: 1.5px solid rgba(34, 211, 238, 0.4);
+  animation: sp-ring-pulse 2s ease-in-out infinite;
+}
+
+@keyframes sp-ring-pulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+}
+
+.squad-poster .shield-svg {
+  width: 56px;
+  height: 64px;
+  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 1));
+  animation: sp-shield-float 3s ease-in-out infinite alternate;
+}
+
+@keyframes sp-shield-float {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+.squad-poster .scan-line {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #22d3ee, transparent);
+  opacity: 0;
+  border-radius: 2px;
+  animation: sp-scan 2.8s ease-in-out infinite;
+}
+
+@keyframes sp-scan {
+  0% {
+    top: 15%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.8;
+  }
+
+  85% {
+    opacity: 0.8;
+  }
+
+  100% {
+    top: 82%;
+    opacity: 0;
+  }
+}
+
+.squad-poster .dual-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.squad-poster .slash {
+  font-size: 20px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  line-height: 1;
+  margin: 0 1px;
+}
+
+.squad-poster .formation-label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(0, 242, 254, 0.8);
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+}
+
+/* Title Wrap */
+.squad-poster .title-wrap {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: sp-pop-in 0.7s cubic-bezier(.34, 1.56, .64, 1) 0.3s both;
+}
+
+.squad-poster .title-wrap h1 {
+  font-family: 'Boogaloo', cursive;
+  font-size: 52px;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 4px 4px 0 #e6480a, -2px -2px 0 #e6480a, 2px -2px 0 #e6480a, -2px 2px 0 #e6480a, 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.squad-poster .title-wrap h1 .highlight {
+  color: #ffe066;
+  text-shadow: 4px 4px 0 #b8860b, -2px -2px 0 #b8860b, 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.squad-poster .subtitle {
+  position: relative;
+  z-index: 2;
+  font-size: 15px;
+  font-weight: 700;
+  color: #a5f3fc;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+  letter-spacing: 1px;
+  animation: sp-pop-in 0.7s cubic-bezier(.34, 1.56, .64, 1) 0.45s both;
+}
+
+/* Tip Section */
+.squad-poster .tip-section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: rgba(0, 20, 40, 0.55);
+  border: 1.5px solid rgba(0, 242, 254, 0.3);
+  border-radius: 16px;
+  padding: 12px 16px 14px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 16px rgba(0, 242, 254, 0.1), inset 0 1px 0 rgba(0, 242, 254, 0.1);
+  animation: sp-pop-in 0.7s cubic-bezier(.34, 1.56, .64, 1) 0.55s both;
+}
+
+.squad-poster .tip-text {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(0, 242, 254, 0.9), 0 0 24px rgba(0, 242, 254, 0.4);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.squad-poster .tip-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.squad-poster .tip-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 30, 60, 0.6);
+  border: 2px solid rgba(0, 242, 254, 0.45);
+  border-radius: 14px;
+  padding: 10px 14px;
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.15), inset 0 1px 0 rgba(0, 242, 254, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.squad-poster .tip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 24px rgba(0, 242, 254, 0.4), 0 10px 24px rgba(0, 0, 0, 0.4);
+  border-color: rgba(0, 242, 254, 0.8);
+}
+
+.squad-poster .tip-label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #a5f3fc;
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.8);
+}
+
+/* Credits Section */
+.squad-poster .credits-section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: sp-pop-in 0.7s cubic-bezier(.34, 1.56, .64, 1) 0.7s both;
+}
+
+.squad-poster .credits-text {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(165, 243, 252, 0.7);
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.3);
+}
+
+.squad-poster .credits-names {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.squad-poster .name-tag {
+  background: rgba(0, 242, 254, 0.12);
+  border: 1.5px solid rgba(0, 242, 254, 0.5);
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #00f2fe;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.9), 0 0 20px rgba(0, 242, 254, 0.4);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.15), inset 0 1px 0 rgba(0, 242, 254, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.squad-poster .name-tag:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.5), inset 0 1px 0 rgba(0, 242, 254, 0.2);
+}
+
+.squad-poster .credits-sep {
+  color: rgba(165, 243, 252, 0.4);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@keyframes sp-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ===== SQUAD POSTER RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .squad-poster .poster {
+    width: 100%;
+    min-height: auto;
+    padding: 24px 16px 32px;
+    border-radius: 20px;
+  }
+
+  .squad-poster .tag {
+    font-size: 22px;
+    padding: 10px 16px;
+  }
+
+  .squad-poster .tip-icons {
+    gap: 8px;
+  }
+
+  .squad-poster .tip-card {
+    padding: 8px 10px;
+  }
+}
